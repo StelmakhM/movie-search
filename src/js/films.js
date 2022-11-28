@@ -31,11 +31,12 @@ function createMarkUp(array) {
     return markUp = array.map(({ title, release_date, poster_path, genres }) => {
         const releaseDate = new Date(release_date).getFullYear();
         return ` <li class='films__item'>
+                    <a class='films__link'>
                     <img class='films__poster' src='${movieApi.imgUrl}${movieApi.imgSize}${poster_path}' alt='${title} poster' />
                     <div class='films__info'>
                     <h2 class='films__title'>${title}</h2>
                     <p class='films__genres'>${(genres.length > 3) ? genres[0] + ", " + genres[1] + ", " + ' and others' : genres.join(', ')} | ${releaseDate}</p>
-                    </div>
+                    </div></a>
                 </li>`;
     }).join('');
 }

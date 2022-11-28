@@ -1,82 +1,86 @@
 .films__list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding-top: 20px;
-    padding-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 20px;
+  padding-bottom: 40px;
 
-      @media screen and (min-width: 768px) {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 32px;
-        padding-top: 60px;
-        padding-bottom: 60px;
-    }
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 32px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
 
-    @media screen and (min-width: 1280px) {
-        row-gap: 32px;
-        column-gap: 12px;
-    }
+  @media screen and (min-width: 1280px) {
+    row-gap: 32px;
+    column-gap: 12px;
+  }
 }
 
 .films__item {
-    height: 440px;
-      @media screen and (min-width: 768px) {
-        width: calc((100% - 32px)/2);
-        height: 495px;
-    }
-     @media screen and (min-width: 1280px) {
-       width: calc((100% - 32px)/3);
-       height: 635px;
-    }
+  height: 440px;
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 32px) / 2);
+    height: 495px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: calc((100% - 32px) / 3);
+    height: 635px;
+  }
 }
 
 .films__poster {
-    height: 400px;
-    min-width: 100%;    
-    margin-bottom: 10px;
-    border-radius: 5px;
-    object-fit: cover;
-      @media screen and (min-width: 768px) {
-        height: 455px;
-        margin-bottom: 8px;
-    }
+  height: 400px;
+  min-width: 100%;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  object-fit: cover;
+  @media screen and (min-width: 768px) {
+    height: 455px;
+    margin-bottom: 8px;
+  }
 
-      @media screen and (min-width: 1280px) {
-       height: 575px;
-       margin-bottom: 12px;
-    }
+  @media screen and (min-width: 1280px) {
+    height: 575px;
+    margin-bottom: 12px;
+  }
 }
 
 .films__info {
-    font-size: 12px;
-    font-weight: 500;
-    line-height: calc(16/12);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: calc(16 / 12);
 
-    @media screen and (min-width: 1280px) {
-        font-size: 20px;
-        line-height: calc(24/20);
-    }
-
+  @media screen and (min-width: 1280px) {
+    font-size: 20px;
+    line-height: calc(24 / 20);
+  }
 }
 
 .films__title {
-    font-size: 12px;
-    font-weight: 500;
-    text-transform: uppercase;
-    color: $films-title-color;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: $films-title-color;
 
-    @media screen and (min-width: 1280px) {
-        font-size: 20px;
-        line-height: calc(24/20);
-    }
+  @media screen and (min-width: 1280px) {
+    font-size: 20px;
+    line-height: calc(24 / 20);
+  }
 }
 
 .films__genres {
-    color: $films-subtitle-color;
+  color: $films-subtitle-color;
 }
 
+.films__link {
+    display: block;
+    transition: transform cubic-bezier(0.4, 0, 0.2, 1) 350ms;
 
-
-
+    &:hover {
+    transform: scale(1.03);
+    }
+}
 
