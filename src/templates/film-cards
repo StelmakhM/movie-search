@@ -1,0 +1,7 @@
+{{#each this}}
+<li>
+  <img src="" alt="" />
+  <h2></h2>
+  <p></p>
+</li>
+{{/#each}}
