@@ -2,17 +2,17 @@
 
 @import './common';
 
-//Base
-
-@import './base/body';
-@import './base/container';
-
 //Utils
 
 @import './utils/mixins';
 @import './utils/variables';
 @import './utils/placeholder';
 @import './utils/visually-hidden';
+
+//Base
+
+@import './base/body';
+@import './base/container';
 
 //Layout
 @import './layout/filmoteka';
