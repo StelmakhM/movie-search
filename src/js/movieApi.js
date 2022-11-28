@@ -1,20 +1,39 @@
 import axios from 'axios';
 
-class MovieApi {
-  #BASE_URL_TRANDING = 'https://api.themoviedb.org/3/trending/movie/week';
+export class MovieApi {
+  #BASE_URL = 'https://api.themoviedb.org/3/';
   #API_KEY = '9644f0ea42d355116080d8c56f2a2e95';
+  #BEARER_TOKEN =
+    'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5NjQ0ZjBlYTQyZDM1NTExNjA4MGQ4YzU2ZjJhMmU5NSIsInN1YiI6IjYzODQ5YThiYmYwOWQxMDA3YjA1ZGNhMiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Malh7hKQ8cPpJehS1trEierjSDz873qjS069_qwsppI';
+  #IMG_URL = 'https://image.tmdb.org/t/p/';
 
-  constructor() {}
+  constructor() {
+    this.imgUrl = this.#IMG_URL;
+    this.imgSize = 'w500';
+  }
 
   async fetchTrendingMovies() {
-    searchParams = {
-      params: {
-        api_key: this.#API_KEY,
+    const searchParams = {
+      headers: {
+        Authorization: `${this.#BEARER_TOKEN}`,
       },
     };
 
-    const response = await axios.get(
-      `${this.#BASE_URL_TRANDING}?${searchParams}`
+    return await axios.get(
+      `${this.#BASE_URL + 'trending/movie/week'}`,
+      searchParams
+    );
+  }
+
+  async fetchMoviesGenres() {
+    const searchParams = {
+      headers: {
+        Authorization: `${this.#BEARER_TOKEN}`,
+      },
+    };
+    return await axios.get(
+      `${this.#BASE_URL + '/genre/movie/list'}`,
+      searchParams
     );
   }
 }
