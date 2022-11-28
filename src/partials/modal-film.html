@@ -1,0 +1,32 @@
+<div class="backdrop is-hidden" data-modal>
+    <div class="modal is-open">
+        <button class="modal__btn-close" data-modal-close>Х
+            <!-- <svg class="modal__icon" width="16" height="16">
+              <use href="./images/about/icon.svg#icon-modal-close"></use>
+            </svg> -->
+        </button>
+        <div class="card__img-wrapper">
+            <img src="./images/Rectangle 18.jpg" alt="film-name">
+        </div>
+
+        <div class="card__info-wrapper">
+            <h2 class="card__film-title">${film name}</h2>
+            <p class="card__subdivision">
+                Vote / Votes <span class="card__vote">${vote}</span> / <span class="card__votes">${votes}</span>
+            </p>
+            <p class="card__subdivision">Popularity<span class="card__popularity"></span>${popularity}
+            </p>
+            <p class="card__subdivision">Original Title <span class="card__original-title">${original-title}</span>
+            </p>
+            <p class="card__subdivision"> Genre <span class="card__genre">${genre}</span>
+            </p>
+        </div>
+
+        <p class="card__about">About
+        </p>
+        <p class="card__description">${description}
+        </p>
+        <button class="btn-add-watched" type="button">add to Watched</button>
+        <button class="btn-add-queue" type="button">add to queue</button>
+    </div>
+</div>
