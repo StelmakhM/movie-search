@@ -5,22 +5,38 @@
               <use href="./images/about/icon.svg#icon-modal-close"></use>
             </svg> -->
         </button>
-        <div class="card__img-wrapper">
-            <img src="./images/Rectangle 18.jpg" alt="film-name">
+        <div class="general-wrapper">
+            <div class="card__img-wrapper">
+                <img src="./images/Rectangle 18.jpg" alt="film-name">
+            </div>
+                <div>
+                    <div class="card__info-wrapper">
+                        <h2 class="card__film-title">${film name}</h2>
+                        <p class="card__subdivision"> Vote / Votes <span class="card__vote distance">${vote}</span> /
+                            <span class="card__info-text">${votes}</span>
+                        </p>
+                        <p class="card__subdivision">Popularity<span class="card__info-text distance">${popularity}</span></p>
+                        <p class="card__subdivision">Original Title <span class="card__info-text distance">${original-title}</span>
+                        </p>
+                        <p class="card__subdivision"> Genre <span class="card__genre distance">${genre}</span></p>
+                    </div>
+                    <p class="card__about">About</p>
+                    <p class="card__description">Four of the West’s most infamous outlaws assemble to steal a huge stash of
+                        gold
+                        from the most corrupt settlement of the gold rush towns. But not all goes to plan one is killed and
+                        the
+                        other three escapes with bags of gold hide out in the abandoned gold mine where they happen across
+                        another gang of three – who themselves were planning to hit the very same bank! As tensions rise,
+                        things
+                        go from bad to worse as they realise the bags of gold are filled with lead... they’ve been double
+                        crossed – but by who and how?</p>
+                    <div class="btn-wrapper">
+                        <button class="btn-add-watched" type="button">add to Watched</button>
+                        <button class="btn-add-queue" type="button">add to queue</button>
+                    </div>
+                </div>
+    
         </div>
-        <div class="card__info-wrapper">
-            <h2 class="card__film-title">${film name}</h2>
-            <p class="card__subdivision"> Vote / Votes <span class="card__vote">${vote}</span> / 
-                <span class="card__votes">${votes}</span></p>
-            <p class="card__subdivision">Popularity<span class="card__popularity"></span>${popularity}</p>
-            <p class="card__subdivision">Original Title <span class="card__original-title">${original-title}</span></p>
-            <p class="card__subdivision"> Genre <span class="card__genre">${genre}</span></p>
-        </div>
-        <p class="card__about">About</p>
-        <p class="card__description">${description}</p>
-        <div class="btn-wrapper">
-            <button class="btn-add-watched" type="button">add to Watched</button>
-            <button class="btn-add-queue" type="button">add to queue</button>
-        </div>
+        
     </div>
 </div>
