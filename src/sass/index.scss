@@ -1,0 +1,23 @@
+//Normalize
+
+@import './common';
+
+//Base
+
+@import './base/body';
+@import './base/container';
+
+//Utils
+
+@import './utils/mixins';
+@import './utils/variables';
+@import './utils/placeholder';
+@import './utils/visually-hidden';
+
+//Layout
+@import './layout/filmoteka';
+@import './layout/footer';
+@import './layout/header';
+@import './layout/modal-film';
+@import './layout/modal-team';
+@import './layout/my-library';
