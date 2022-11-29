@@ -32,7 +32,7 @@ export class MovieApi {
     return await axios.get(`${this.#BASE_URL + 'genre/movie/list'}`, searchParams);
   }
 
-  async fetchQueryMovies() {
+  async fetchMoviesbyName() {
     const searchParams = {
       headers: {
         Authorization: `${this.#BEARER_TOKEN}`,
