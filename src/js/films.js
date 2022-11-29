@@ -1,67 +1,58 @@
 import { MovieApi } from './movieApi';
 import Notiflix from 'notiflix';
+import { registerIntersectionObserver } from './io';
+export {movieApi,refs,createMarkUp,createGenreFromId};
 
 const refs = {
   filmsContainer: document.querySelector('.films__list'),
   form: document.querySelector('#header-form'),
   wrongSesarchEl: document.querySelector('.header__form-message'),
+    sentinel: document.querySelector('#sentinel')
 };
 
 const movieApi = new MovieApi();
-
+registerIntersectionObserver(refs.sentinel)
 window.addEventListener('load', onWindowLoad);
 refs.form.addEventListener('submit', onFormSubmit);
 
 async function onWindowLoad() {
-  try {
-    const {
-      data: { results, page, total_pages, total_results },
-    } = await movieApi.fetchTrendingMovies();
-    const {
-      data: { genres },
-    } = await movieApi.fetchMoviesGenres();
-    createGenreFromId(results, genres);
-    createMarkUp(results);
-  } catch (error) {
-    console.log(error);
-  }
+    try {
+        const {data: {results, page, total_pages, total_results}} = await movieApi.fetchTrendingMovies();
+        const { data: { genres } } = await movieApi.fetchMoviesGenres();
+        createGenreFromId(results, genres);
+        refs.filmsContainer.innerHTML = createMarkUp(results);
+    } catch (error) {
+        console.log(error);
+    }
 }
 
 async function onFormSubmit(e) {
-  try {
-    e.preventDefault();
-    movieApi.query = e.currentTarget.elements.movie_title.value;
-    if (!movieApi.query) {
-      Notiflix.Notify.info(`Please, enter search query`);
-      return;
+    try {
+        e.preventDefault();
+        movieApi.query = e.currentTarget.elements.movie_title.value;
+        if(!movieApi.query) {
+            Notiflix.Notify.warning(`Please, enter search query`);
+            return;
+        }
+        const {data: {results, page, total_pages, total_results}} = await movieApi.fetchQueryMovies();
+        if(!total_pages) {
+            Notiflix.Notify.failure('Sorry, there are no movies matching your search query. Please try again.');
+              return;
+        }
+        const { data: { genres } } = await movieApi.fetchMoviesGenres();
+        createGenreFromId(results, genres);
+        refs.filmsContainer.innerHTML = createMarkUp(results);
+        e.target.reset();
+    } catch (error) {
+        console.log(error);
     }
-    refs.wrongSesarchEl.classList.add('hidden');
-    const {
-      data: { results, page, total_pages, total_results },
-    } = await movieApi.fetchQueryMovies();
-    if (!total_pages) {
-      Notiflix.Notify.failure(
-        'Sorry, there are no movies matching your search query. Please try again.'
-      );
-      refs.wrongSesarchEl.classList.remove('hidden');
-      return;
-    }
-    const {
-      data: { genres },
-    } = await movieApi.fetchMoviesGenres();
-    createGenreFromId(results, genres);
-    createMarkUp(results);
-    e.target.reset();
-  } catch (error) {
-    console.log(error);
-  }
+
 }
 
 function createMarkUp(filmsArray) {
-  const markUp = filmsArray
-    .map(({ title, release_date, poster_path, genres }) => {
-      const releaseDate = new Date(release_date).getFullYear();
-      return ` <li class='films__item'>
+    return filmsArray.map(({ title, release_date, poster_path, genres }) => {
+        const releaseDate = new Date(release_date).getFullYear();
+        return ` <li class='films__item'>
                     <a class='films__link'>
                     <img class='films__poster' src='${movieApi.imgUrl}${
         movieApi.imgSize
@@ -75,10 +66,7 @@ function createMarkUp(filmsArray) {
                     } | ${releaseDate}</p>
                     </div></a>
                 </li>`;
-    })
-    .join('');
-
-  refs.filmsContainer.innerHTML = markUp;
+    }).join('');
 }
 
 function createGenreFromId(moviesList, genreIds) {
