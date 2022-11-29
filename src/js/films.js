@@ -4,8 +4,9 @@ import { registerIntersectionObserver } from './io';
 export {movieApi,refs,createMarkUp,createGenreFromId};
 
 const refs = {
-    filmsContainer: document.querySelector('.films__list'),
-    form: document.querySelector('#header-form'),
+  filmsContainer: document.querySelector('.films__list'),
+  form: document.querySelector('#header-form'),
+  wrongSesarchEl: document.querySelector('.header__form-message'),
     sentinel: document.querySelector('#sentinel')
 };
 
@@ -53,23 +54,28 @@ function createMarkUp(filmsArray) {
         const releaseDate = new Date(release_date).getFullYear();
         return ` <li class='films__item'>
                     <a class='films__link'>
-                    <img class='films__poster' src='${movieApi.imgUrl}${movieApi.imgSize}${poster_path}' alt='${title} poster' />
+                    <img class='films__poster' src='${movieApi.imgUrl}${
+        movieApi.imgSize
+      }${poster_path}' alt='${title} poster' />
                     <div class='films__info'>
                     <h2 class='films__title'>${title}</h2>
-                    <p class='films__genres'>${(genres.length > 3) ? genres[0] + ", " + genres[1]  + ' and others' : genres.join(', ')} | ${releaseDate}</p>
+                    <p class='films__genres'>${
+                      genres.length > 3
+                        ? genres[0] + ', ' + genres[1] + ' and others'
+                        : genres.join(', ')
+                    } | ${releaseDate}</p>
                     </div></a>
                 </li>`;
     }).join('');
 }
 
-function createGenreFromId (moviesList, genreIds) {
-    moviesList.forEach(film => {
-        film.genres = [];
-        genreIds.forEach(genre => {
-            if (film.genre_ids.includes(genre.id)) {
-                film.genres.push(genre.name);
-            }
-        });
+function createGenreFromId(moviesList, genreIds) {
+  moviesList.forEach(film => {
+    film.genres = [];
+    genreIds.forEach(genre => {
+      if (film.genre_ids.includes(genre.id)) {
+        film.genres.push(genre.name);
+      }
     });
+  });
 }
-
