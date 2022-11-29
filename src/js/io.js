@@ -16,7 +16,7 @@ function loadMoreMovies(entries) {
         if(entry.isIntersecting && movieApi.query !== null) {
             try {
             movieApi.incrementPage();
-            const {data: {results, total_pages}} = await movieApi.fetchQueryMovies();
+            const {data: {results}} = await movieApi.fetchMoviesbyName();
             const { data: { genres } } = await movieApi.fetchMoviesGenres();
             createGenreFromId(results, genres);
             refs.filmsContainer.insertAdjacentHTML('beforeend', createMarkUp(results))
