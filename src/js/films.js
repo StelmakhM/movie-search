@@ -7,7 +7,7 @@ const refs = {
   filmsContainer: document.querySelector('.films__list'),
   form: document.querySelector('#header-form'),
   wrongSesarchEl: document.querySelector('.header__form-message'),
-    sentinel: document.querySelector('#sentinel')
+  sentinel: document.querySelector('#sentinel')
 };
 
 const movieApi = new MovieApi();
@@ -34,9 +34,11 @@ async function onFormSubmit(e) {
             Notiflix.Notify.warning(`Please, enter search query`);
             return;
         }
+        refs.wrongSesarchEl.classList.add('hidden');
         const {data: {results, page, total_pages, total_results}} = await movieApi.fetchQueryMovies();
         if(!total_pages) {
             Notiflix.Notify.failure('Sorry, there are no movies matching your search query. Please try again.');
+            refs.wrongSesarchEl.classList.remove('hidden');
               return;
         }
         const { data: { genres } } = await movieApi.fetchMoviesGenres();
