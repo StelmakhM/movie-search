@@ -7,6 +7,7 @@
     background-color: $modal-background-color;
     z-index: 10;
     overflow-y: scroll;
+    // overflow: auto;
 }
 
 // .backdrop.is-hidden {
@@ -29,7 +30,6 @@
 .modal {
     position: absolute;
     width: 280px;
-    height: 940px;
     padding: 48px 20px 40px 20px;
 
     top: 50%;
@@ -40,14 +40,12 @@
 
     @media screen and (min-width: 768px) {
         width: 704px;
-        height: 552px;
         padding-top: 40px;
         padding-left: 29px;
     }
 
     @media screen and (min-width: 1024px) {
         width: 806px;
-        height: 558px;
         padding-top: 40px;
         padding-left: 29px;
     }
@@ -101,7 +99,7 @@ img {
     justify-content: space-between;
     width: 215px;
     margin-bottom: 20px;
-    
+
     @media screen and (min-width: 1024px) {
         width: 259px;
     }
@@ -126,16 +124,16 @@ img {
     font-size: 12px;
     line-height: 1.33;
 
-    color: $film-information-color;   
+    color: $film-information-color;
 }
 
 .distance {
     margin-left: 39px;
     flex-shrink: 1;
-   
-@media screen and (min-width: 1024px) {
-    margin-left: 83px;
-}
+
+    @media screen and (min-width: 1024px) {
+        margin-left: 83px;
+    }
 }
 
 .card__subdivision:not(:last-child) {
@@ -189,7 +187,6 @@ img {
         width: 391px;
         margin-bottom: 20px;
     }
-
 }
 
 .btn-wrapper {
