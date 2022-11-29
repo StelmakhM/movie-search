@@ -11,7 +11,7 @@ export class MovieApi {
     this.imgUrl = this.#IMG_URL;
     this.imgSize = 'w500';
     this.page = 1;
-    this.query = 'inception';
+    this.query = null;
   }
 
   async fetchTrendingMovies() {
@@ -44,5 +44,9 @@ export class MovieApi {
       }
     };
     return await axios.get(`${this.#BASE_URL + 'search/movie'}`, searchParams);
+  }
+
+  incrementPage() {
+    this.page +=1;
   }
 }
