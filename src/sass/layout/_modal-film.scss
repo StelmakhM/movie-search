@@ -4,23 +4,21 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: $modal-background-color;
+    background-color: rgba(0, 0, 0, 0.150);
     z-index: 10;
     overflow-y: scroll;
     // overflow: auto;
 }
 
-// .is-hidden {
-//     opacity: 0;
-//     pointer-events: none;
-// }
-.is-hiddenn {
-    opacity: 0;
+.backdrop.is-hidden {
+    display: none;
+    // opacity: 0;
     pointer-events: none;
 }
-.overflow {
-    overflow: hidden;
-  }
+
+// .overflow {
+//     overflow: hidden;
+//   }
 
 // .is-open {}
 
