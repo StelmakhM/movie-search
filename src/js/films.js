@@ -1,4 +1,5 @@
 import { MovieApi } from './movieApi';
+import Notiflix from 'notiflix';
 
 const refs = {
     filmsContainer: document.querySelector('.films__list'),
@@ -25,7 +26,17 @@ async function onFormSubmit(e) {
     try {
         e.preventDefault();
         movieApi.query = e.currentTarget.elements.movie_title.value;
+        if(!movieApi.query) {
+            Notiflix.Notify.info(`Please, enter search query`);
+            return;
+        }
         const {data: {results, page, total_pages, total_results}} = await movieApi.fetchQueryMovies();
+        if(!total_pages) {
+            Notiflix.Notify.failure(
+                'Sorry, there are no movies matching your search query. Please try again.'
+              );
+              return;
+        }
         const { data: { genres } } = await movieApi.fetchMoviesGenres();
         createGenreFromId(results, genres);
         createMarkUp(results);
@@ -44,7 +55,7 @@ function createMarkUp(filmsArray) {
                     <img class='films__poster' src='${movieApi.imgUrl}${movieApi.imgSize}${poster_path}' alt='${title} poster' />
                     <div class='films__info'>
                     <h2 class='films__title'>${title}</h2>
-                    <p class='films__genres'>${(genres.length > 3) ? genres[0] + ", " + genres[1] + ", " + ' and others' : genres.join(', ')} | ${releaseDate}</p>
+                    <p class='films__genres'>${(genres.length > 3) ? genres[0] + ", " + genres[1]  + ' and others' : genres.join(', ')} | ${releaseDate}</p>
                     </div></a>
                 </li>`;
     }).join('');
@@ -62,3 +73,4 @@ function createGenreFromId (moviesList, genreIds) {
         });
     });
 }
+
