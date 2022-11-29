@@ -1,0 +1,231 @@
+.header {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  background-image: url(/src/images/header/header-home-background-mobile.png);
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url(/src/images/header/header-home-background-mobile@2x.png);
+  }
+  @media screen and (min-width: 768px) {
+    background-image: url(/src/images/header/header-home-background-tablet.png);
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(/src/images/header/header-home-background-tablet@2x.png);
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    background-image: url(/src/images/header/header-home-background-desktop.png);
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(/src/images/header/header-home-background-desktop@2x.png);
+    }
+  }
+}
+
+.library {
+  background-image: url(/src/images/header/header-library-background-mobile.png);
+
+  @media (min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+    background-image: url(/src/images/header/header-library-background-mobile@2x.png);
+  }
+  @media screen and (min-width: 768px) {
+    background-image: url(/src/images/header/header-library-background-tablet.png);
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(/src/images/header/header-library-background-tablet@2x.png);
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    background-image: url(/src/images/header/header-library-background-desktop.png);
+
+    @media (min-device-pixel-ratio: 2),
+      (min-resolution: 192dpi),
+      (min-resolution: 2dppx) {
+      background-image: url(/src/images/header/header-library-background-desktop@2x.png);
+    }
+  }
+}
+
+.header__home {
+  padding-top: 40px;
+  padding-bottom: 44px;
+}
+
+.header__library {
+  padding-top: 40px;
+  padding-bottom: 62px;
+
+  @media screen and (min-width: 768px) {
+    padding-bottom: 60px;
+  }
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  margin-bottom: 54px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 40px;
+  }
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+
+  outline: transparent;
+
+  cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    gap: 8px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    gap: 10px;
+  }
+}
+
+.nav__logo-title {
+  @include text-design(500, 30px, calc(35 / 30), 0.03em);
+  color: $header-text-color;
+}
+
+.nav__list {
+  display: flex;
+  gap: 39px;
+  margin-left: auto;
+}
+
+.nav__link {
+  @include text-design(400, 12px, calc(14 / 12), 0.03em);
+  color: $header-text-color;
+
+  outline: transparent;
+
+  cursor: pointer;
+}
+
+.nav__link.current::after {
+  content: '';
+  bottom: 0;
+  left: 0;
+
+  display: block;
+  height: 3px;
+
+  background-color: $header-underline-color;
+}
+
+// ---------------ФОРМА---------------
+
+.header__form {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+}
+
+.header__input {
+  width: 280px;
+
+  @include text-design(400, 14px, calc(16 / 14), 0.03em);
+  color: $header-text-color;
+
+  background-color: transparent;
+  border-bottom: 1px solid $header-text-color;
+  outline: transparent;
+
+  @media screen and (min-width: 768px) {
+    width: 336px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 394px;
+  }
+}
+
+::placeholder {
+  @include text-design(400, 14px, calc(16 / 14), 0.03em);
+  color: $header-text-color;
+}
+
+.header__search-icon {
+  position: absolute;
+  transform: translate(-100%, -70%);
+
+  stroke: $header-text-color;
+  fill: none;
+
+  cursor: pointer;
+}
+
+.header__form-message {
+  margin-top: 16px;
+
+  @include text-design(400, 14px, calc(16 / 14), 0.01em);
+  color: $header-underline-color;
+
+  @media screen and (min-width: 768px) {
+    text-align: center;
+
+    margin-top: 20px;
+  }
+}
+
+// ----------------КНОПКИ-----------------
+
+.header__button-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  @media screen and (min-width: 768px) {
+    gap: 32px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    gap: 16px;
+  }
+}
+
+.header__button {
+  padding: 14px 37px 12px 37px;
+
+  @include text-design(500, 12px, calc(16 / 12), 0.03em);
+  color: $header-text-color;
+
+  background-color: transparent;
+  border-radius: 5px;
+  border: 1px solid $header-text-color;
+  outline: transparent;
+
+  cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    padding: 13px 57px 13px 57px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding: 13px 41px 11px 41px;
+  }
+}
+
+.header__button--active {
+  background-color: $modal-button-color;
+  border: transparent;
+  box-shadow: 0 8px 43px rgba(255, 107, 1, 0.6);
+}
