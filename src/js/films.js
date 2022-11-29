@@ -10,9 +10,11 @@ window.addEventListener('load', onWindowLoad);
 
 async function onWindowLoad() {
     try {
-        const { data: { results: films } } = await movieApi.fetchTrendingMovies();
+        const { data: { results: trendFilms } } = await movieApi.fetchTrendingMovies();
         const { data: { genres } } = await movieApi.fetchMoviesGenres();
-        films.forEach(film => {
+        const queryFilms = await movieApi.fetchQueryMovies();
+        console.log('queryFilms :>> ', queryFilms);
+        trendFilms.forEach(film => {
             film.genres = [];
             genres.forEach(genre => {
                 if (film.genre_ids.includes(genre.id)) {
@@ -20,7 +22,7 @@ async function onWindowLoad() {
                 }
             });
         });
-        refs.filmsContainer.innerHTML = createMarkUp(films);
+        refs.filmsContainer.innerHTML = createMarkUp(trendFilms);
     } catch (error) {
         console.log(error);
     }

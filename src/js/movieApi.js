@@ -10,6 +10,8 @@ export class MovieApi {
   constructor() {
     this.imgUrl = this.#IMG_URL;
     this.imgSize = 'w500';
+    this.page = 1;
+    this.query = 'inception';
   }
 
   async fetchTrendingMovies() {
@@ -18,11 +20,7 @@ export class MovieApi {
         Authorization: `${this.#BEARER_TOKEN}`,
       },
     };
-
-    return await axios.get(
-      `${this.#BASE_URL + 'trending/movie/week'}`,
-      searchParams
-    );
+    return await axios.get(`${this.#BASE_URL + 'trending/movie/week'}`, searchParams);
   }
 
   async fetchMoviesGenres() {
@@ -31,9 +29,20 @@ export class MovieApi {
         Authorization: `${this.#BEARER_TOKEN}`,
       },
     };
-    return await axios.get(
-      `${this.#BASE_URL + '/genre/movie/list'}`,
-      searchParams
-    );
+    return await axios.get(`${this.#BASE_URL + 'genre/movie/list'}`, searchParams);
+  }
+
+  async fetchQueryMovies() {
+    const searchParams = {
+      headers: {
+        Authorization: `${this.#BEARER_TOKEN}`,
+      },
+      params: {
+        page: this.page,
+        query: this.query,
+        include_adult: false,
+      }
+    };
+    return await axios.get(`${this.#BASE_URL + 'search/movie'}`, searchParams);
   }
 }
