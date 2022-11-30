@@ -1,0 +1,8 @@
+#back-to-top {
+  transition: 300ms;
+}
+
+#back-to-top:hover {
+  background-color: rgb(255, 136, 52);
+  transform: scale(1.02);
+}
