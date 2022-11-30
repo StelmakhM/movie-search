@@ -2,6 +2,7 @@ import { MovieApi } from './movieApi';
 import Notiflix from 'notiflix';
 import { registerIntersectionObserver } from './io';
 export { movieApi, refs, createMarkUp, createGenreFromId };
+export {addGenresToSessionStorage};
 import {addToSessionStorage,getFromSessionStorage,removeFromSessionStorage} from './session-storage'
 
 const refs = {

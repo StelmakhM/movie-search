@@ -1,5 +1,5 @@
 import {createGenreFromId, createMarkUp, movieApi, refs} from "./films";
-
+import {addGenresToSessionStorage} from './films'
 
 export function registerIntersectionObserver (target) {
 const options = {
@@ -17,8 +17,8 @@ function loadMoreMovies(entries) {
             try {
             movieApi.incrementPage();
             const {data: {results}} = await movieApi.fetchMoviesbyName();
-            const { data: { genres } } = await movieApi.fetchMoviesGenres();
-            createGenreFromId(results, genres);
+            const genresList = await addGenresToSessionStorage();
+            createGenreFromId(results, genresList);
             refs.filmsContainer.insertAdjacentHTML('beforeend', createMarkUp(results))
             } catch (error) {
                 console.log(error);
