@@ -4,23 +4,16 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.150);
+    background-color: rgba(0, 0, 0, 0.644);
     z-index: 10;
     overflow-y: scroll;
-    // overflow: auto;
-}
+  }
 
 .backdrop.is-hidden {
     display: none;
-    // opacity: 0;
     pointer-events: none;
 }
 
-// .overflow {
-//     overflow: hidden;
-//   }
-
-// .is-open {}
 
 .modal {
     position: absolute;
@@ -138,7 +131,7 @@ img {
 .card__vote-title {
     display: flex;
     justify-content: center;
-    
+
     width: 36px;
     height: 16px;
 
@@ -215,6 +208,9 @@ img {
     width: 110px;
     height: 44px;
 
+    transition-property: transform;
+    transition-duration: 500ms;
+
     @media screen and (min-width: 768px) {
         padding: 13px 9px;
         margin-right: 20px;
@@ -226,6 +222,11 @@ img {
         margin-right: 20px;
         width: 136px;
     }
+}
+
+
+.btn-add-watched:hover {
+    transform: scale(1.1);
 }
 
 .btn-add-queue {
@@ -241,6 +242,9 @@ img {
     width: 110px;
     height: 44px;
 
+    transition-property: transform;
+    transition-duration: 500ms;
+
     @media screen and (min-width: 768px) {
         width: 125.03px;
     }
@@ -248,4 +252,8 @@ img {
     @media screen and (min-width: 1280px) {
         width: 136px;
     }
+}
+
+.btn-add-queue:hover {
+    transform: scale(1.1);
 }
