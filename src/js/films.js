@@ -20,13 +20,7 @@ refs.form.addEventListener('submit', onFormSubmit);
 
 async function onWindowLoad() {
 	try {
-		const test = addGenresToSessionStorage();
-		console.log('test :>> ', test);
-		const genresList = await test.json();
-		console.log('genresList :>> ', genresList);
-
-
-
+		const genresList = await addGenresToSessionStorage();
 		const { data: { results, page, total_pages, total_results } } = await movieApi.fetchTrendingMovies();
 		createGenreFromId(results, genresList);
 		refs.filmsContainer.innerHTML = createMarkUp(results);
@@ -46,10 +40,10 @@ async function onFormSubmit(e) {
 		refs.wrongSearchEl.classList.add('hidden');
 		const { data: { results, page, total_pages, total_results } } = await movieApi.fetchMoviesbyName();
 		if (!total_pages) {
-			Notiflix.Notify.failure('Sorry, there are no movies matching your search query. Please try again.');
 			refs.wrongSearchEl.classList.remove('hidden');
 			return;
 		}
+		const genresList = await addGenresToSessionStorage();
 		createGenreFromId(results, genresList);
 		refs.filmsContainer.innerHTML = createMarkUp(results);
 		e.target.reset();
@@ -91,8 +85,8 @@ async function addGenresToSessionStorage () {
 		if(!getFromSessionStorage('genresList')) {
 			const { data: { genres } } = await movieApi.fetchMoviesGenres();
 			addToSessionStorage('genresList', genres)
-			return getFromSessionStorage('genresList')
 			}
+			return getFromSessionStorage('genresList')
 	} catch (error) {
 		console.log(error);
 	}
