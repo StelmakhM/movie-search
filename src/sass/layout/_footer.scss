@@ -1,7 +1,6 @@
 footer {
   position: relative;
   bottom: 0px;
-  //   box-shadow: -1px -8px 33px 6px rgba(0, 0, 0, 0.15);
   background-color: $footer-color;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -62,11 +61,6 @@ footer {
     color: $button-color;
   }
 }
-
-// .footer__btn:hover .footer__list-icon {
-//   width: 200px;
-//   height: 200px;
-// }
 
 @keyframes spin {
   0% {
