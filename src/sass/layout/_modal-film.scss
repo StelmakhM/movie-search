@@ -20,7 +20,7 @@
     width: 280px;
     padding: 48px 20px 40px 20px;
 
-    top: 50%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -161,7 +161,6 @@ img {
 }
 
 .card__vote-number {
-    // color: $header-text-color;
     width: 36px;
     height: 16px;
 
@@ -183,7 +182,6 @@ img {
 }
 
 .card__about {
-    // color: $films-title-color;
     line-height: 1.33;
     text-transform: uppercase;
 

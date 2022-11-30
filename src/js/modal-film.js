@@ -9,8 +9,7 @@ const refs = {
 
 refs.filmCard.addEventListener('click', toggleModal);
 refs.closeModalBtn.addEventListener('click', closeModal);
-document.addEventListener('keydown', onEscDown);
-document.addEventListener('click', onBackdropClick);
+
 
 function toggleModal(e) {
   const item = e.target.closest('.films__list')
@@ -19,6 +18,7 @@ function toggleModal(e) {
   }
   refs.backdropEl.classList.remove('is-hidden');
   document.addEventListener('keydown', onEscDown);
+  document.addEventListener('click', onBackdropClick);
   document.body.style.overflow = "hidden";
 };
 
