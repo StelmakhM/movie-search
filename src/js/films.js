@@ -1,10 +1,11 @@
 import { MovieApi } from './movieApi';
 import Notiflix from 'notiflix';
 import { registerIntersectionObserver } from './io';
+import { addToSessionStorage, getFromSessionStorage } from './session-storage';
+import { createPagination } from './pagination';
+import { stopSpinner, playSpinner } from './spinner';
 export { movieApi, refs, createMarkUp, createGenreFromId };
 export { addGenresToSessionStorage };
-import { addToSessionStorage, getFromSessionStorage, removeFromSessionStorage } from './session-storage';
-import { createPagination } from './pagination';
 
 
 const refs = {
@@ -38,6 +39,7 @@ async function onWindowLoad() {
 async function onFormSubmit(e) {
 	try {
 		e.preventDefault();
+		playSpinner();
 		movieApi.resetPage();
 		movieApi.query = e.currentTarget.elements.movie_title.value.trim();
 		if (!movieApi.query) {
@@ -55,10 +57,10 @@ async function onFormSubmit(e) {
 		createGenreFromId(results, genresList);
 		refs.filmsContainer.innerHTML = createMarkUp(results);
 		e.target.reset();
+		stopSpinner();
 	} catch (error) {
 		console.log(error);
 	}
-
 }
 
 function createMarkUp(filmsArray) {
