@@ -2,7 +2,6 @@
 
 const refs = {
   closeModalBtn: document.querySelector('.modal__btn-close'),
-  // body: document.body,
   filmCard: document.querySelector('.films__list'),
   backdropEl: document.querySelector('.backdrop')
 };
