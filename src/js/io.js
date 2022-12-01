@@ -1,4 +1,5 @@
 import { createGenreFromId, createMarkUp, movieApi, refs, addGenresToSessionStorage, isSearchActive } from "./films";
+import { playSpinner, stopSpinner } from "./spinner";
 
 export function registerIntersectionObserver(target) {
     const options = {
@@ -31,18 +32,22 @@ export function registerIntersectionObserver(target) {
     }
 
     async function loadMoreSearchMovies() {
+        playSpinner();
         movieApi.incrementPage();
         const { data: { results } } = await movieApi.fetchIoMoviesbyName();
         const genresList = await addGenresToSessionStorage();
         createGenreFromId(results, genresList);
         refs.filmsContainer.insertAdjacentHTML('beforeend', createMarkUp(results));
+        stopSpinner();
     }
 
     async function loadMoreTrendMovies() {
+        playSpinner();
         movieApi.incrementPage();
         const { data: { results } } = await movieApi.fetchIoTrendingMovies();
         const genresList = await addGenresToSessionStorage();
         createGenreFromId(results, genresList);
         refs.filmsContainer.insertAdjacentHTML('beforeend', createMarkUp(results));
+        stopSpinner();
     }
 }
