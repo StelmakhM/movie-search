@@ -44,12 +44,14 @@ async function onFormSubmit(e) {
 		movieApi.query = e.currentTarget.elements.movie_title.value.trim();
 		if (!movieApi.query) {
 			Notiflix.Notify.warning(`Please, enter search query`);
+			stopSpinner();
 			return;
 		}
 		refs.wrongSearchEl.classList.add('hidden');
 		const { data: { results, total_pages, total_results } } = await movieApi.fetchMoviesbyName();
 		if (!total_pages) {
 			refs.wrongSearchEl.classList.remove('hidden');
+			stopSpinner();
 			return;
 		}
 		createPagination(total_results);
