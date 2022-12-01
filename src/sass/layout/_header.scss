@@ -102,6 +102,19 @@
 .nav__logo-title {
   @include text-design(500, 30px, calc(35 / 30), 0.03em);
   color: $header-text-color;
+
+  @media screen and (max-width: 767px) {
+      position: absolute;
+      white-space: nowrap;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      border: 0;
+      padding: 0;
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      margin: -1px;
+  }
 }
 
 .nav__list {
