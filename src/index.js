@@ -5,3 +5,4 @@ import './js/modal-film';
 import './js/modal-team';
 import './js/spinner';
 import './js/up-button';
+import './js/local-storage';
