@@ -14,11 +14,15 @@ export class MovieApi {
     this.query = null;
   }
 
-  async fetchTrendingMovies() {
+
+  async fetchTrendingMovies(page = 1) {
     const searchParams = {
       headers: {
         Authorization: `${this.#BEARER_TOKEN}`,
       },
+      params: {
+        page
+      }
     };
     return await axios.get(`${this.#BASE_URL + 'trending/movie/week'}`, searchParams);
   }
@@ -32,7 +36,21 @@ export class MovieApi {
     return await axios.get(`${this.#BASE_URL + 'genre/movie/list'}`, searchParams);
   }
 
-  async fetchMoviesbyName() {
+  async fetchMoviesbyName(page = 1) {
+    const searchParams = {
+      headers: {
+        Authorization: `${this.#BEARER_TOKEN}`,
+      },
+      params: {
+        page,
+        query: this.query,
+        include_adult: false,
+      }
+    };
+    return await axios.get(`${this.#BASE_URL + 'search/movie'}`, searchParams);
+  }
+
+  async fetchIoMoviesbyName() {
     const searchParams = {
       headers: {
         Authorization: `${this.#BEARER_TOKEN}`,
@@ -46,7 +64,23 @@ export class MovieApi {
     return await axios.get(`${this.#BASE_URL + 'search/movie'}`, searchParams);
   }
 
+  async fetchIoTrendingMovies() {
+    const searchParams = {
+      headers: {
+        Authorization: `${this.#BEARER_TOKEN}`,
+      },
+      params: {
+        page: this.page,
+      }
+    };
+    return await axios.get(`${this.#BASE_URL + 'trending/movie/week'}`, searchParams);
+  }
+
   incrementPage() {
-    this.page +=1;
+    this.page += 1;
+  }
+
+  resetPage() {
+    this.page = 1;
   }
 }

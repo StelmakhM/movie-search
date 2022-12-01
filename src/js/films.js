@@ -2,29 +2,34 @@ import { MovieApi } from './movieApi';
 import Notiflix from 'notiflix';
 import { registerIntersectionObserver } from './io';
 export { movieApi, refs, createMarkUp, createGenreFromId };
-export {addGenresToSessionStorage};
-import {addToSessionStorage,getFromSessionStorage,removeFromSessionStorage} from './session-storage'
+export { addGenresToSessionStorage };
+import { addToSessionStorage, getFromSessionStorage, removeFromSessionStorage } from './session-storage';
+import { createPagination } from './pagination';
+
 
 const refs = {
 	filmsContainer: document.querySelector('.films__list'),
 	form: document.querySelector('#header-form'),
 	wrongSearchEl: document.querySelector('.header__form-message'),
-	sentinel: document.querySelector('#sentinel')
+	sentinel: document.querySelector('#sentinel'),
+	paginationContainer: document.querySelector('#tui-pagination-container'),
 };
 
 const movieApi = new MovieApi();
-registerIntersectionObserver(refs.sentinel);
 window.addEventListener('load', onWindowLoad);
 refs.form.addEventListener('submit', onFormSubmit);
-
-
 
 async function onWindowLoad() {
 	try {
 		const genresList = await addGenresToSessionStorage();
-		const { data: { results, page, total_pages, total_results } } = await movieApi.fetchTrendingMovies();
+		const { data: { results, total_results } } = await movieApi.fetchTrendingMovies();
 		createGenreFromId(results, genresList);
+		createPagination(total_results);
 		refs.filmsContainer.innerHTML = createMarkUp(results);
+		if (window.matchMedia("(max-width: 768px)").matches) {
+			registerIntersectionObserver(refs.sentinel);
+			refs.paginationContainer.classList.add('visually-hidden');
+		}
 	} catch (error) {
 		console.log(error);
 	}
@@ -33,17 +38,19 @@ async function onWindowLoad() {
 async function onFormSubmit(e) {
 	try {
 		e.preventDefault();
-		movieApi.query = e.currentTarget.elements.movie_title.value;
+		movieApi.resetPage();
+		movieApi.query = e.currentTarget.elements.movie_title.value.trim();
 		if (!movieApi.query) {
 			Notiflix.Notify.warning(`Please, enter search query`);
 			return;
 		}
 		refs.wrongSearchEl.classList.add('hidden');
-		const { data: { results, page, total_pages, total_results } } = await movieApi.fetchMoviesbyName();
+		const { data: { results, total_pages, total_results } } = await movieApi.fetchMoviesbyName();
 		if (!total_pages) {
 			refs.wrongSearchEl.classList.remove('hidden');
 			return;
 		}
+		createPagination(total_results);
 		const genresList = await addGenresToSessionStorage();
 		createGenreFromId(results, genresList);
 		refs.filmsContainer.innerHTML = createMarkUp(results);
@@ -57,9 +64,9 @@ async function onFormSubmit(e) {
 function createMarkUp(filmsArray) {
 	return filmsArray.map(({ title, release_date, poster_path, genres }) => {
 		const releaseDate = new Date(release_date).getFullYear();
-		const placeholderUrl = 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg'
+		const placeholderUrl = 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg';
 		const posterPath = poster_path ? `${movieApi.imgUrl}${movieApi.imgSize}${poster_path}` : placeholderUrl;
-		return ` <li class='films__item'>
+		return ` <li class='films__item' style="min-height:100px">
                     <a class='films__link'>
                     <img class='films__poster' src='${posterPath}' alt='${title} poster' />
                     <div class='films__info'>
@@ -81,15 +88,19 @@ function createGenreFromId(moviesList, genresList) {
 	});
 }
 
-async function addGenresToSessionStorage () {
+async function addGenresToSessionStorage() {
 	try {
-		if(!getFromSessionStorage('genresList')) {
+		if (!getFromSessionStorage('genresList')) {
 			const { data: { genres } } = await movieApi.fetchMoviesGenres();
-			addToSessionStorage('genresList', genres)
-			}
-			return getFromSessionStorage('genresList')
+			addToSessionStorage('genresList', genres);
+		}
+		return getFromSessionStorage('genresList');
 	} catch (error) {
 		console.log(error);
 	}
 }
+
+
+
+
 
