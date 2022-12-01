@@ -1,3 +1,5 @@
+//===================== SPINNER PRELOADER =============//
+
 .spinner {
   position: fixed;
   top: 0;
@@ -66,4 +68,61 @@
   @media screen and (min-width: 1280px) {
     @include text-design(700, 30px, calc(35 / 30), 0.03em);
   }
+}
+
+
+//===================== ORANGE SPINNER ASYNC =============//
+
+@keyframes spinner-line-fade-more {
+  0%, 100% {
+    opacity: 0; /* minimum opacity */
+  }
+  1% {
+    opacity: 1;
+  }
+}
+
+@keyframes spinner-line-fade-quick {
+  0%, 39%, 100% {
+    opacity: 0.25; /* minimum opacity */
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+@keyframes spinner-line-fade-default {
+  0%, 100% {
+    opacity: 0.22; /* minimum opacity */
+  }
+  1% {
+    opacity: 1;
+  }
+}
+
+@keyframes spinner-line-shrink {
+  0%, 25%, 100% {
+    /* minimum scale and opacity */
+    transform: scale(0.5);
+    opacity: 0.25;
+  }
+  26% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.spinner-backdrop {
+  background-color: $backdropColor;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.is-closed {
+  display: none;
 }
