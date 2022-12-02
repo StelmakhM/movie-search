@@ -1,0 +1,15 @@
+.tui-pagination .tui-page-btn {
+    transition: background-color 250ms linear;
+    &:hover {
+        background-color: #FF8155;
+    }
+}
+
+.tui-pagination .tui-is-selected {
+    border: 1px solid #FF6B02;
+    background-color: #FF6B02;
+    transition: background-color 250ms linear;
+    &:hover {
+      background-color: #ff3b0a;
+    }
+  }
