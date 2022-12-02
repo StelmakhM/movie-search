@@ -1,8 +1,15 @@
-import imgPath from '../images/sprite.svg';
-
 const refs = {
     filmCard: document.querySelector('.modal'),
-    filmsContainer: document.querySelector('.films__list')
+    filmsContainer: document.querySelector('.films__list'),
+    cardTitle : document.querySelector('[data-card-title]'),
+    cardAvarageVotes : document.querySelector('[data-card-avarage-votes]'),
+    cardTotalVotes : document.querySelector('[data-card-total-votes]'),
+    cardPopularity: document.querySelector('[data-card-popularity]'),
+    cardOriginalTitle : document.querySelector('[data-card-original-title]'),
+    cardGenres : document.querySelector('[data-card-genre]'),
+    cardOverview : document.querySelector('[data-card-overview]'),
+    cardImage : document.querySelector('[data-card-image]'),
+    cardModal : document.querySelector('[data-card-modal]')
 };
 
 export function renderFilmCard(e) {
@@ -10,57 +17,23 @@ export function renderFilmCard(e) {
     const filmObject = {
         ...dataset
     };
-
-    const { genres, originalTitle, overview, posterPath, title, voteAverage, voteCount, populatiry, id, releaseDate } = filmObject;
+    const { genres, originalTitle, overview, posterPath, title, voteAverage, voteCount, populatiry} = filmObject;
     const arrOfGenres = genres.split(',');
     const fixedGenres = arrOfGenres.length > 3 ? arrOfGenres[0] + ', ' + arrOfGenres[1] + ' and others' : arrOfGenres.join(', ') || 'No genre';
-    const markUp = `
-  <div class="modal" data-genres='${genres}' data-original-title='${originalTitle}' data-overview='${overview}' data-posterPath='${posterPath}' data-title='${title}' data-vote-average='${voteAverage}' data-vote-count='${voteCount}' data-populatiry='${populatiry}' data-id='${id}' data-release-date='${releaseDate}'>
-    <button class="modal__btn-close" data-modal-close>
-        <svg class="icon icon-close" width="16" height="16">
-            <use href=${imgPath}#icon-close></use>
-        </svg>
-    </button>
-    <div class="general-wrapper">
-        <div class="card__img-wrapper">
-            <img src=${posterPath} alt=${title} />
-        </div>
-        <div>
-            <h2 class="card__film-title">${title || originalTitle}</h2>
-            <div class="card__info-wrapper">
-                <div class="card__info-wrapper-left">
-                    <p class="card__subdivision card__votes">Vote/Votes</p>
-                    <p class="card__subdivision">Popularity</p>
-                    <p class="card__subdivision">Original Title</p>
-                    <p class="card__subdivision">Genre</p>
-                </div>
-                <div class="card__info-wrapper-right">
-                    <p class="card__votes">
-                        <span class="card__vote-title">${Number.parseFloat(voteAverage).toFixed(1)}</span> /
-                        <span class="card__info-text card__vote-number">
-                              ${voteCount}
-                        </span>
-                    </p>
-                    <p class="card__info-text">${Number.parseFloat(populatiry).toFixed(1)}</p>
-                    <p class="card__info-text">${title || originalTitle}</p>
-                    <p class="card__genre">${fixedGenres}</p>
-                </div>
-            </div>
-            <p class="card__about">About</p>
-            <p class="card__description">${overview}</p>
-            <div class="btn-wrapper">
-                <button class="btn-add-watched" type="button">
-                    add to Watched
-                </button>
-                <button class="btn-add-queue" type="button">
-                    add to queue
-                </button>
-            </div>
-        </div>
-    </div>
-</div>`;
+    refs.cardTitle.innerHTML = title;
+    refs.cardAvarageVotes.innerHTML = Number.parseFloat(voteAverage).toFixed(1);
+    refs.cardTotalVotes.innerHTML = voteCount;
+    refs.cardPopularity.innerHTML = Number.parseFloat(populatiry).toFixed(1);
+    refs.cardOriginalTitle.innerHTML = originalTitle;
+    refs.cardGenres.innerHTML = fixedGenres;
+    refs.cardOverview.innerHTML = overview;
+    refs.cardImage.src = posterPath;
+    
 
-    refs.filmCard.innerHTML = markUp;
-
+    for(let attr in filmObject) {
+        if(filmObject.hasOwnProperty(attr)) {
+            refs.cardModal.dataset[attr] = attr;
+        }
+    }
 }
 
