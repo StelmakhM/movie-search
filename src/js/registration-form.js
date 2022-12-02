@@ -80,5 +80,26 @@ export const showRegisterError = error => {
 export const showLoginState = user => {
   refs.lblAuthState.innerHTML = `You're logged in as ${user.displayName} (uid: ${user.uid}, email: ${user.email}) `;
 };
+
 hideLoginError();
 hideRegisterError();
+
+// refs.firstLetter.addEventListener('click', toggleMenu);
+// function toggleMenu(e) {
+//   if (e.target === e.currentTarget) {
+//     refs.userMenu.classList.add('active-user-menu');
+//     window.addEventListener('keydown', closeMenuEscKey);
+//     document.querySelector('.user-menu__box').addEventListener('click', e => {
+//       if (e.currentTarget === e.target) {
+//         refs.userMenu.classList.remove('active-user-menu');
+//         window.removeEventListener('keydown', closeMenuEscKey);
+//       }
+//     });
+//   }
+// }
+// const closeMenuEscKey = e => {
+//   if (e.code === 'Escape') {
+//     refs.userMenu.classList.remove('active-user-menu');
+//     window.removeEventListener('keydown', closeMenuEscKey);
+//   }
+// };
