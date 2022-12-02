@@ -143,6 +143,8 @@ img {
 .card__votes {
   display: flex;
   justify-content: center;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .card__vote-title {

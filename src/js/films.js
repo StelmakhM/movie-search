@@ -66,11 +66,12 @@ async function onFormSubmit(e) {
 }
 
 function createMarkUp(filmsArray) {
-	return filmsArray.map(({ title, release_date, poster_path, genres }) => {
+	return filmsArray.map(({ title, release_date, poster_path, genres, id, vote_average, vote_count, original_title, overview, popularity
+	}) => {
 		const releaseDate = new Date(release_date).getFullYear();
 		const placeholderUrl = 'https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg';
 		const posterPath = poster_path ? `${movieApi.imgUrl}${movieApi.imgSize}${poster_path}` : placeholderUrl;
-		return ` <li class='films__item' style="min-height:100px">
+		return ` <li class='films__item' style="min-height:100px" data-id='${id}' data-title='${title}' data-release-date='${releaseDate}' data-poster-path='${posterPath}' data-genres='${genres}' data-vote-average='${vote_average}' data-vote-count='${vote_count}' data-original-title='${original_title}' data-overview='${overview}' data-populatiry='${popularity}'>
                     <a class='films__link'>
                     <img class='films__poster' src='${posterPath}' alt='${title} poster' />
                     <div class='films__info'>
