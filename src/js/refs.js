@@ -24,3 +24,5 @@ const refs = {
   lblLoginErrorMessage: document.getElementById('lblLoginErrorMessage'),
   registerFormCloseBtn: document.getElementById('registerFormCloseBtn'),
 };
+
+export default refs;
