@@ -1,0 +1,45 @@
+{{!-- <use href="{{iconUrl}}#icon-close"></use> --}}
+<div class="modal" data-id="{{id}}">
+    <button class="modal__btn-close" data-modal-close>
+        <svg class="icon icon-close" width="16" height="16">
+            <use href="./images/sprite.svg#icon-close"></use>
+        </svg>
+    </button>
+    <div class="general-wrapper">
+        <div class="card__img-wrapper">
+            <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}" />
+        </div>
+        <div>
+            <h2 class="card__film-title">{{ title }}</h2>
+            <div class="card__info-wrapper">
+                <div class="card__info-wrapper-left">
+                    <p class="card__subdivision card__votes">Vote / Votes</p>
+                    <p class="card__subdivision">Popularity</p>
+                    <p class="card__subdivision">Original Title</p>
+                    <p class="card__subdivision">Genre</p>
+                </div>
+                <div class="card__info-wrapper-right">
+                    <p class="card__votes">
+                        <span class="card__vote-title">{{ vote_average }}</span> /
+                        <span class="card__info-text card__vote-number">
+                            {{ vote_count }}
+                        </span>
+                    </p>
+                    <p class="card__info-text">{{ popularity }}</p>
+                    <p class="card__info-text">{{ original_title }}</p>
+                    <p class="card__genre">{{ genre }}</p>
+                </div>
+            </div>
+            <p class="card__about">About</p>
+            <p class="card__description">{{ overview }}</p>
+            <div class="btn-wrapper">
+                <button class="btn-add-watched" type="button">
+                    add to Watched
+                </button>
+                <button class="btn-add-queue" type="button">
+                    add to queue
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
