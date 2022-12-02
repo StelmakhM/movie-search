@@ -29,7 +29,7 @@ export function renderFilmCard(e) {
             <h2 class="card__film-title">${title || originalTitle}</h2>
             <div class="card__info-wrapper">
                 <div class="card__info-wrapper-left">
-                    <p class="card__subdivision card__votes">Votes</p>
+                    <p class="card__subdivision card__votes">Vote/Votes</p>
                     <p class="card__subdivision">Popularity</p>
                     <p class="card__subdivision">Original Title</p>
                     <p class="card__subdivision">Genre</p>
