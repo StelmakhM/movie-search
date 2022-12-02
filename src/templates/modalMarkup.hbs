@@ -2,9 +2,14 @@
 <div class="modal" data-id="{{id}}">
     <button class="modal__btn-close" data-modal-close>
         <svg class="icon icon-close" width="16" height="16">
-            <use href="./images/sprite.svg#icon-close"></use>
+            <use href="{{this.imgPath}}"></use>
         </svg>
     </button>
+    {{!-- <button class="modal__btn-close" data-modal-close>
+        <svg class="icon icon-close" width="16" height="16">
+            <use href="./images/sprite.svg#icon-close"></use>
+        </svg>
+    </button> --}}
     <div class="general-wrapper">
         <div class="card__img-wrapper">
             <img src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{title}}" />

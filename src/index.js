@@ -7,3 +7,4 @@ import './js/spinner';
 import './js/up-button';
 import './js/pagination';
 import './js/modalFilm';
+import './js/catch';
