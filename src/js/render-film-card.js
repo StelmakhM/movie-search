@@ -11,11 +11,11 @@ export function renderFilmCard(e) {
         ...dataset
     };
 
-    const { genres, originalTitle, overview, posterPath, title, voteAverage, voteCount, populatiry } = filmObject;
+    const { genres, originalTitle, overview, posterPath, title, voteAverage, voteCount, populatiry, id, releaseDate } = filmObject;
     const arrOfGenres = genres.split(',');
     const fixedGenres = arrOfGenres.length > 3 ? arrOfGenres[0] + ', ' + arrOfGenres[1] + ' and others' : arrOfGenres.join(', ') || 'No genre';
     const markUp = `
-  <div class="modal">
+  <div class="modal" data-genres='${genres}' data-original-title='${originalTitle}' data-overview='${overview}' data-posterPath='${posterPath}' data-title='${title}' data-vote-average='${voteAverage}' data-vote-count='${voteCount}' data-populatiry='${populatiry}' data-id='${id}' data-release-date='${releaseDate}'>
     <button class="modal__btn-close" data-modal-close>
         <svg class="icon icon-close" width="16" height="16">
             <use href=${imgPath}#icon-close></use>
