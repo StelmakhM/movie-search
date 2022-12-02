@@ -32,5 +32,45 @@
     <p class="header__form-message hidden">
       Search result not successful. Enter the correct movie name and try again
     </p>
+    <!--  =========  REGISTRATION  =========== -->
+    <div class="header__box-login-logout">
+      <span id="loginUser"></span>
+      <button
+        id="btnLoginHeader"
+        class="header__btn-login"
+        type="button"
+        aria-label="login"
+        name="login"
+      >
+        Login
+      </button>
+      <div class="user-menu" id="userMenu">
+        <span id="firstLetter" class="user-menu__first-letter"></span>
+        <div class="user-menu__box">
+          <p class="user-menu__title-hover">Portfolio and setting</p>
+          <div class="user-menu__hiden">
+            <ul class="user-menu__list">
+              <li class="user-menu__item" id="userMenuName"></li>
+              <li class="user-menu__item" id="changePassword">
+                Change password
+              </li>
+              <li class="user-menu__item" id="setting">Setting</li>
+              <li class="user-menu__item user-menu__item--btn">
+                <button
+                  id="btnLogoutHeader"
+                  class="user-menu__btn-logout"
+                  type="button"
+                  aria-label="logout"
+                  name="logout"
+                >
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- =========================================== -->
   </div>
 </header>
