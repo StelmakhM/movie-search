@@ -1,7 +1,12 @@
 .tui-pagination .tui-page-btn {
   transition: background-color 250ms linear;
+  font-family: relative;
+
+  font-weight: 600;
+
   &:hover {
     background-color: #ff6b01;
+    transform: scale(1.15);
   }
 }
 

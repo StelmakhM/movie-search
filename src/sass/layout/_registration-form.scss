@@ -385,9 +385,9 @@ button:hover {
     background: #fff;
     color: orange;
     @include font(700, 18, 20);
-    border-radius: 10px;
-    border-top-right-radius: 0;
-    border: 1px solid #000;
+    border-radius: 20px;
+    // border-top-right-radius: 0;
+    // border: 1px solid #000;
     display: none;
     z-index: 5;
     flex-direction: column;
@@ -402,8 +402,8 @@ button:hover {
     height: 38px;
     border-radius: 50%;
     @include font(700, 18, 20);
-    color: rgb(225, 225, 6);
-    background: rgba(37, 16, 2, 0.674);
+    color: rgb(255, 255, 0);
+    // background: rgba(62, 212, 2, 0.674);
     transition: 250ms;
     &:hover + .user-menu__box {
       display: flex;
@@ -440,6 +440,7 @@ button:hover {
   &__hiden {
     // display: none;
     padding: 10px;
+    background-color: #333;
   }
   &.active-user-menu &__hidden {
     display: block;
@@ -467,3 +468,7 @@ button:hover {
 }
 
 // user menu
+// .user-menu__hiden {
+//   background-color: rgba(23, 156, 5, 0.578);
+//   padding: 10px;
+// }
