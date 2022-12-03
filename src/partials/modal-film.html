@@ -1,57 +1,73 @@
 <div class="backdrop is-hidden" data-modal>
-    <div data-card-modal class="modal">
-      <button class="modal__btn-close" data-modal-close>
-        <svg class="icon icon-close" width="16" height="16">
-          <use href="./images/sprite.svg#icon-close"></use>
-        </svg>
-      </button>
-      <div class="general-wrapper">
-        <div class="card__img-wrapper">
-          <img data-card-image src="./images/Rectangle 18.jpg" alt="film-name" />
+  <div data-card-modal class="modal">
+    <button class="modal__btn-close" data-modal-close>
+      <svg class="icon icon-close" width="16" height="16">
+        <use href="./images/sprite.svg#icon-close"></use>
+      </svg>
+    </button>
+    <div class="general-wrapper">
+      <div class="card__img-wrapper">
+        <div class="trailer__container">
+          <button
+            class="trailer__btn"
+            type="button"
+            data-id="${id}"
+            data-name="${originalTitle}"
+          >
+            <svg class="trailer__icon" width="100" height="100">
+              <use href="./images/sprite.svg#icon-youtube"></use>
+            </svg>
+          </button>
         </div>
-        <div>
-          <h2 data-card-title class="card__film-title">${film name}</h2>
-          <div class="card__info-wrapper">
-            <div class="card__info-wrapper-left">
-              <p  class="card__subdivision card__votes">Vote / Votes</p>
-              <p  class="card__subdivision">Popularity</p>
-              <p  class="card__subdivision">Original Title</p>
-              <p  class="card__subdivision">Genre</p>
-            </div>
-  
-            <div class="card__info-wrapper-right">
-              <p class="card__votes">
-                <span data-card-avarage-votes class="card__vote-title">${2}</span> /
-                <span data-card-total-votes class="card__info-text card__vote-number">${123}</span>
-              </p>
-              <p data-card-popularity class="card__info-text">${100}</p>
-              <p data-card-original-title class="card__info-text">${original}</p>
-              <p data-card-genre class="card__genre">${genre}</p>
-            </div>
+        <img data-card-image src="./images/Rectangle 18.jpg" alt="film-name" />
+      </div>
+      <div>
+        <h2 data-card-title class="card__film-title">${film name}</h2>
+        <div class="card__info-wrapper">
+          <div class="card__info-wrapper-left">
+            <p class="card__subdivision card__votes">Vote / Votes</p>
+            <p class="card__subdivision">Popularity</p>
+            <p class="card__subdivision">Original Title</p>
+            <p class="card__subdivision">Genre</p>
           </div>
-          <p class="card__about">About</p>
-          <p data-card-overview class="card__description">
-            Four of the West’s most infamous outlaws assemble to steal a huge
-            stash of gold from the most corrupt settlement of the gold rush towns.
-            But not all goes to plan one is killed and the other three escapes
-            with bags of gold hide out in the abandoned gold mine where they
-            happen across another gang of three – who themselves were planning to
-            hit the very same bank! As tensions rise, things go from bad to worse
-            as they realise the bags of gold are filled with lead... they’ve been
-            double crossed – but by who and how? gold from the most corrupt
-            settlement of the gold rush towns. But not all goes to plan one is
-            killed and the other three escapes with bags of gold hide out in the
-            abandoned gold mine where they happen across another gang of three –
-            who themselves were planning to hit the very same bank! As tensions
-            rise, things go from bad to worse as they realise the bags of gold are
-            filled with lead... they’ve been double crossed – but by who and how?
-          </p>
-          <div class="btn-wrapper">
-            <button class="btn-add-watched" type="button">add to Watched</button>
-            <button class="btn-add-queue" type="button">add to queue</button>
+
+          <div class="card__info-wrapper-right">
+            <p class="card__votes">
+              <span data-card-avarage-votes class="card__vote-title">${2}</span>
+              /
+              <span
+                data-card-total-votes
+                class="card__info-text card__vote-number"
+                >${123}</span
+              >
+            </p>
+            <p data-card-popularity class="card__info-text">${100}</p>
+            <p data-card-original-title class="card__info-text">${original}</p>
+            <p data-card-genre class="card__genre">${genre}</p>
           </div>
+        </div>
+        <p class="card__about">About</p>
+        <p data-card-overview class="card__description">
+          Four of the West’s most infamous outlaws assemble to steal a huge
+          stash of gold from the most corrupt settlement of the gold rush towns.
+          But not all goes to plan one is killed and the other three escapes
+          with bags of gold hide out in the abandoned gold mine where they
+          happen across another gang of three – who themselves were planning to
+          hit the very same bank! As tensions rise, things go from bad to worse
+          as they realise the bags of gold are filled with lead... they’ve been
+          double crossed – but by who and how? gold from the most corrupt
+          settlement of the gold rush towns. But not all goes to plan one is
+          killed and the other three escapes with bags of gold hide out in the
+          abandoned gold mine where they happen across another gang of three –
+          who themselves were planning to hit the very same bank! As tensions
+          rise, things go from bad to worse as they realise the bags of gold are
+          filled with lead... they’ve been double crossed – but by who and how?
+        </p>
+        <div class="btn-wrapper">
+          <button class="btn-add-watched" type="button">add to Watched</button>
+          <button class="btn-add-queue" type="button">add to queue</button>
         </div>
       </div>
     </div>
   </div>
-  
+</div>
