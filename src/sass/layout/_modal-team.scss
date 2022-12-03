@@ -26,14 +26,15 @@
     transform: translate(-50%, -50%);
 
     background-color: $header-text-color;
+
     @media screen and (min-width: 768px) {
         width: 704px;
-               top: 50%;
+        top: 50%;
     }
 
     @media screen and (min-width: 1280px) {
         width: 806px;
-           top: 50%;
+        top: 50%;
     }
 }
 
@@ -42,8 +43,8 @@
     top: 8px;
     right: 8px;
     text-decoration: none;
-    
-   background: none;
+
+    background: none;
     transition-property: transform;
     transition-duration: 500ms;
 
@@ -107,7 +108,7 @@
     width: 60px;
     height: 60px;
     box-shadow: 5px 5px 11px -2px black;
-  
+
 
     @media screen and (min-width: 768px) {
         width: 100px;
@@ -146,5 +147,3 @@
         font-size: 16px;
     }
 }
-
-
