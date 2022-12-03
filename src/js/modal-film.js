@@ -1,12 +1,15 @@
-import { renderFilmCard } from "./render-film-card";
+import { renderFilmCard } from './render-film-card';
+import { launchTrailer } from './trailer';
 
 const refs = {
   closeModalBtn: document.querySelector('[data-modal-close]'),
   filmCard: document.querySelector('.films__list'),
   backdropEl: document.querySelector('.backdrop'),
+  startTrailerBtn: document.querySelector('.trailer__btn'),
 };
 
 refs.filmCard.addEventListener('click', toggleModal);
+refs.startTrailerBtn.addEventListener('click', e => launchTrailer(e));
 
 function toggleModal(e) {
   const item = e.target.closest('.films__item');
