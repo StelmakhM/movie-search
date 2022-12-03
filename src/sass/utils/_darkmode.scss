@@ -108,6 +108,14 @@
   stroke: $darkmode-color-two;
 }
 
+.darkmode .trailer__icon {
+  fill: $darkmode-color-one;
+}
+
+.darkmode .trailer__btn {
+  color: $darkmode-color-one;
+}
+
 // -----------------scroll up----------------
 
 .darkmode #back-to-top,
