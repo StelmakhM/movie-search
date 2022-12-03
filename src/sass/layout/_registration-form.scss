@@ -438,9 +438,9 @@ button:hover {
     display: none;
   }
   &__hiden {
-    // display: none;
     padding: 10px;
-    background-color: #333;
+    // background-color: #333;
+    border-radius: 15px;
   }
   &.active-user-menu &__hidden {
     display: block;
@@ -448,14 +448,15 @@ button:hover {
   &__item {
     padding: 5px 10px;
     transition: 250ms;
+    border-radius: 30px;
     &:hover {
       cursor: pointer;
-      background: orange;
+      background-color: rgb(22, 148, 121);
       color: gray;
     }
   }
   &__item:not(:last-child) {
-    border-bottom: 1px solid #000;
+    // border-bottom: 1px solid #000;
     margin-bottom: 10px;
   }
   &__item--btn {
@@ -466,9 +467,3 @@ button:hover {
     color: inherit;
   }
 }
-
-// user menu
-// .user-menu__hiden {
-//   background-color: rgba(23, 156, 5, 0.578);
-//   padding: 10px;
-// }

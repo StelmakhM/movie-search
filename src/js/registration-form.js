@@ -55,7 +55,7 @@ export const showLoginError = error => {
       refs.divLoginError.innerHTML = `Wrong password. Try again.`;
     }
   } else if (error.code === 'auth/user-not-found') {
-    refs.divLoginError.innerHTML = `User not found.`;
+    refs.divLoginError.innerHTML = `User not found!`;
   } else {
     refs.divLoginError.innerHTML = `Error: ${error.message}`;
   }
@@ -69,9 +69,9 @@ export const hideRegisterError = () => {
 export const showRegisterError = error => {
   refs.divRegisterError.style.display = 'block';
   if (error.code === 'auth/weak-password') {
-    refs.divRegisterError.innerHTML = `Password should be at least 6 characters.`;
+    refs.divRegisterError.innerHTML = `Password should be at least 6 characters`;
   } else if (error.code === 'auth/email-already-in-use') {
-    refs.divRegisterError.innerHTML = `Email already in use.`;
+    refs.divRegisterError.innerHTML = `Email already in use!`;
   } else {
     refs.divRegisterError.innerHTML = `Error: ${error.message}`;
   }
