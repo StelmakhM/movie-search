@@ -28,12 +28,11 @@ export function renderFilmCard(e) {
     refs.cardGenres.innerHTML = fixedGenres;
     refs.cardOverview.innerHTML = overview;
     refs.cardImage.src = posterPath;
-    
 
-    for(let attr in filmObject) {
-        if(filmObject.hasOwnProperty(attr)) {
-            refs.cardModal.dataset[attr] = attr;
-        }
+    console.log(filmObject);
+    
+    for(let key in filmObject) {
+        refs.cardModal.dataset[key] = filmObject[key];
     }
 }
 
