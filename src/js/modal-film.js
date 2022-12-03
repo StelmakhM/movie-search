@@ -39,6 +39,5 @@ function onEscDown(e) {
 function onBackdropClick(e) {
   if (e.target === refs.backdropEl) {
     closeModal();
-    console.log(e.target);
   }
 }
