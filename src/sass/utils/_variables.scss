@@ -1,4 +1,8 @@
+// ----------------fonts----------------
+
 $main-font: Roboto, sans-serif;
+
+// -----------------colors-----------------
 
 $header-text-color: #ffffff;
 $header-underline-color: #ff001b;
@@ -11,3 +15,16 @@ $film-information-color: #8c8c8c;
 $footer-color: #f7f7f7;
 $footer-text-color: #545454;
 $backdropColor: rgba(0, 0, 0, 0.5);
+
+// -----------------darkmode colors-----------------
+
+$background-color: #1f1b24;
+$header-color: #c9c9c9;
+$darkmode-color-one: #03b9a7;
+$darkmode-color-two: #bb86fc;
+$darkmode-color-three: #cf6679;
+$footer-color-darkmode: #2c2635;
+
+// -----------------animation-----------------
+
+$main-animation: all 250ms;
