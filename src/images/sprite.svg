@@ -2,8 +2,7 @@
     <defs>
         <!-- logo-header -->
         <symbol id="icon-site-logo" viewBox="0 0 32 32">
-            <path fill="none" stroke="#fff" style="stroke:var(--color1, #fff)" stroke-linejoin="round"
-                stroke-linecap="round" stroke-width="2.667"
+            <path stroke-linejoin="round" stroke-linecap="round" stroke-width="2.667"
                 d="M26.427 2.667H5.574a2.907 2.907 0 0 0-2.907 2.907v20.853a2.907 2.907 0 0 0 2.907 2.907h20.853a2.907 2.907 0 0 0 2.907-2.907V5.574a2.907 2.907 0 0 0-2.907-2.907zM9.333 2.667v26.667M22.667 2.667v26.667M2.667 16h26.667M2.667 9.333h6.667M2.667 22.667h6.667M22.667 22.667h6.667M22.667 9.333h6.667" />
         </symbol>
         <!-- search-icon -->
@@ -20,16 +19,147 @@
         </symbol>
         <!-- orange-heart footer-->
         <symbol id="icon-heart" viewBox="0 0 34 32">
-            <path fill="#ff6b08" style="fill: var(--color5, #ff6b08)"
+            <path
                 d="M17.231 31.705l-2.412-2.412c-8.96-7.926-14.818-13.268-14.818-19.815-0.001-0.037-0.001-0.080-0.001-0.124 0-5.166 4.188-9.354 9.354-9.354 0.044 0 0.087 0 0.13 0.001l-0.007-0c3.1 0.032 5.868 1.423 7.742 3.605l0.012 0.014c1.886-2.195 4.654-3.587 7.748-3.618l0.006-0c0.037-0.001 0.080-0.001 0.124-0.001 5.166 0 9.354 4.188 9.354 9.354 0 0.044-0 0.087-0.001 0.13l0-0.007c0 6.548-5.858 11.889-14.818 19.815l-2.412 2.412z">
             </path>
         </symbol>
         <!-- icon-close -->
         <symbol id="icon-close" viewBox="0 0 32 32">
-<path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="2.1333" d="M8.533 8.533l14.933 14.933"></path>
-<path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="2.1333" d="M8.533 23.467l14.933-14.933"></path>
-</symbol>
- <!-- youtube -->
+            <path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="2.1333"
+                d="M8.533 8.533l14.933 14.933"></path>
+            <path stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="2.1333"
+                d="M8.533 23.467l14.933-14.933"></path>
+        </symbol>
+        <!-- moon -->
+        <symbol id="moon-icon" viewBox="0 0 499.6 499.6" style="enable-background:new 0 0 499.6 499.6;">
+            <circle style="fill:#063F66;" cx="249.6" cy="250" r="249.6" />
+            <path style="fill:#022730;" d="M72.8,73.2c97.6-97.6,256-97.6,353.6,0s97.6,256,0,353.6" />
+            <g>
+                <ellipse style="fill:#DCF9F6;" cx="133.6" cy="425.2" rx="2.4" ry="21.6" />
+                <ellipse style="fill:#DCF9F6;" cx="133.6" cy="426" rx="21.6" ry="2.4" />
+                <ellipse transform="matrix(0.7054 -0.7088 0.7088 0.7054 18.6212 346.765)" style="fill:#DCF9F6;"
+                    cx="426.474" cy="150.981" rx="21.6" ry="2.4" />
+                <ellipse transform="matrix(0.7054 0.7088 -0.7088 0.7054 232.7671 -257.5539)" style="fill:#DCF9F6;"
+                    cx="426.225" cy="151.245" rx="21.6" ry="2.4" />
+                <ellipse style="fill:#DCF9F6;" cx="366.4" cy="84.4" rx="0.8" ry="9.6" />
+                <ellipse style="fill:#DCF9F6;" cx="366.4" cy="84.4" rx="9.6" ry="0.8" />
+                <ellipse transform="matrix(-0.7107 -0.7035 0.7035 -0.7107 232.771 301.5383)" style="fill:#DCF9F6;"
+                    cx="178.387" cy="102.907" rx="10.4" ry="0.8" />
+                <ellipse transform="matrix(0.7107 -0.7035 0.7035 0.7107 -20.6411 155.2913)" style="fill:#DCF9F6;"
+                    cx="178.491" cy="102.742" rx="10.4" ry="0.8" />
+                <ellipse transform="matrix(-0.7089 -0.7053 0.7053 -0.7089 -92.7171 692.6153)" style="fill:#DCF9F6;"
+                    cx="96.571" cy="365.441" rx="10.4" ry="0.8" />
+                <ellipse transform="matrix(0.7089 -0.7053 0.7053 0.7089 -229.2989 174.8202)" style="fill:#DCF9F6;"
+                    cx="97.139" cy="365.198" rx="10.4" ry="0.8" />
+                <ellipse transform="matrix(0.6999 -0.7143 0.7143 0.6999 37.5702 239.1812)" style="fill:#DCF9F6;"
+                    cx="303.395" cy="74.884" rx="4.8" ry="0.8" />
+                <ellipse transform="matrix(0.6999 0.7143 -0.7143 0.6999 144.8238 -194.2028)" style="fill:#DCF9F6;"
+                    cx="303.501" cy="75.23" rx="4.8" ry="0.8" />
+                <ellipse transform="matrix(0.6998 -0.7144 0.7144 0.6998 -254.4496 288.0746)" style="fill:#DCF9F6;"
+                    cx="215.498" cy="446.756" rx="4.8" ry="0.8" />
+                <ellipse transform="matrix(0.6998 0.7144 -0.7144 0.6998 384.246 -19.8844)" style="fill:#DCF9F6;"
+                    cx="215.78" cy="447.195" rx="4.8" ry="0.8" />
+                <circle style="fill:#DCF9F6;" cx="249.6" cy="250" r="160" />
+            </g>
+            <path style="fill:#95BFB9;"
+                d="M385.6,250c0,88-48,160-136,160s-160-72-160-160s72-160,160-160S385.6,162,385.6,250z" />
+            <g>
+                <circle style="fill:#78A8A0;" cx="138.4" cy="165.2" r="9.6" />
+                <circle style="fill:#78A8A0;" cx="124.8" cy="201.2" r="1.6" />
+                <circle style="fill:#78A8A0;" cx="189.6" cy="222" r="29.6" />
+                <circle style="fill:#78A8A0;" cx="202.4" cy="157.2" r="8" />
+                <circle style="fill:#78A8A0;" cx="257.6" cy="153.2" r="2.4" />
+                <circle style="fill:#78A8A0;" cx="278.4" cy="126" r="2.4" />
+                <circle style="fill:#78A8A0;" cx="201.6" cy="127.6" r="4" />
+                <circle style="fill:#78A8A0;" cx="233.6" cy="114" r="1.6" />
+                <circle style="fill:#78A8A0;" cx="270.4" cy="206" r="6.4" />
+                <circle style="fill:#78A8A0;" cx="318.4" cy="202" r="4" />
+                <circle style="fill:#78A8A0;" cx="328.8" cy="156.4" r="6.4" />
+                <circle style="fill:#78A8A0;" cx="300.8" cy="285.2" r="17.6" />
+                <circle style="fill:#78A8A0;" cx="156" cy="295.6" r="5.6" />
+                <circle style="fill:#78A8A0;" cx="213.6" cy="271.6" r="2.4" />
+                <circle style="fill:#78A8A0;" cx="241.6" cy="331.6" r="9.6" />
+                <circle style="fill:#78A8A0;" cx="124.8" cy="254.8" r="6.4" />
+                <circle style="fill:#78A8A0;" cx="267.2" cy="250.8" r="1.6" />
+                <circle style="fill:#78A8A0;" cx="344" cy="254" r="4" />
+                <circle style="fill:#78A8A0;" cx="174.4" cy="339.6" r="9.6" />
+                <circle style="fill:#78A8A0;" cx="193.6" cy="305.2" r="3.2" />
+                <circle style="fill:#78A8A0;" cx="292.8" cy="342.8" r="3.2" />
+                <circle style="fill:#78A8A0;" cx="241.6" cy="369.2" r="2.4" />
+                <circle style="fill:#78A8A0;" cx="201.6" cy="365.2" r="1.6" />
+                <circle style="fill:#78A8A0;" cx="332.8" cy="328.4" r="6.4" />
+                <circle style="fill:#78A8A0;" cx="284" cy="375.6" r="4" />
+                <circle style="fill:#78A8A0;" cx="245.6" cy="289.2" r="3.2" />
+                <circle style="fill:#78A8A0;" cx="353.6" cy="300.4" r="6.4" />
+                <circle style="fill:#78A8A0;" cx="134.4" cy="323.6" r="5.6" />
+                <circle style="fill:#78A8A0;" cx="309.6" cy="241.2" r="7.2" />
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+            <g>
+            </g>
+        </symbol>
+        <!-- sun -->
+        <symbol id="sun-icon" viewBox="0 0 137.797 137.797" style="enable-background:new 0 0 137.797 137.797">
+            <linearGradient gradientUnits="userSpaceOnUse" x1="0" y1="68.898" x2="137.797" y2="68.898">
+                <stop offset="0" style="stop-color:#6ec7db" />
+                <stop offset="1" style="stop-color:#30afcc" />
+            </linearGradient>
+            <circle style="fill:url(#a)" cx="68.898" cy="68.898" r="68.898" />
+            <path style="fill:#f98b00" d="m68.926 17.297 3.548 6.144 3.546 6.145H61.83l3.549-6.145z" />
+            <path style="fill:#f98b00" d="m86.611 20.41 1.237 6.986 1.237 6.985-6.669-2.421-6.669-2.423 5.432-4.563z" />
+            <path style="fill:#f98b00"
+                d="m102.171 29.372-1.222 6.989-1.222 6.988-5.442-4.553-5.44-4.553 6.663-2.435z" />
+            <path style="fill:#f98b00" d="m113.738 43.107-3.534 6.151-3.535 6.153-3.56-6.137-3.56-6.137 7.095-.014z" />
+            <path style="fill:#f98b00"
+                d="m119.922 59.55-5.422 4.575-5.423 4.577-1.251-6.984-1.252-6.984 6.674 2.408z" />
+            <path style="fill:#f98b00"
+                d="m119.978 77.507-6.658 2.449-6.657 2.451 1.207-6.991 1.207-6.993 5.451 4.543z" />
+            <path style="fill:#f98b00" d="m113.902 94.405-7.093.03-7.096.03 3.521-6.159 3.524-6.16 3.571 6.13z" />
+            <path style="fill:#f98b00"
+                d="m102.422 108.214-6.678-2.395-6.679-2.392 5.412-4.588 5.415-4.588 1.265 6.982z" />
+            <path style="fill:#f98b00" d="m86.92 117.274-5.46-4.53-5.461-4.528 6.652-2.466 6.655-2.463-1.195 6.993z" />
+            <path style="fill:#f98b00" d="m69.255 120.499-3.586-6.122-3.586-6.121 7.094-.045 7.094-.046-3.507 6.166z" />
+            <path style="fill:#f98b00" d="m51.55 117.5-1.281-6.979-1.282-6.977 6.685 2.379 6.684 2.38-5.404 4.597z" />
+            <path style="fill:#f98b00"
+                d="m35.934 108.637 1.175-6.997 1.178-6.995 5.471 4.517 5.471 4.519-6.648 2.477z" />
+            <path style="fill:#f98b00" d="m24.277 94.975 3.496-6.175 3.495-6.174 3.599 6.114 3.603 6.115-7.096.06z" />
+            <path style="fill:#f98b00" d="m17.988 78.156 5.395-4.611 5.389-4.61 1.297 6.975 1.297 6.977-6.688-2.366z" />
+            <path style="fill:#f98b00"
+                d="m17.816 60.199 6.643-2.492 6.642-2.493-1.162 6.999-1.163 6.999-5.478-4.506z" />
+            <path style="fill:#f98b00" d="m23.784 43.262 7.098-.074 7.092-.075-3.482 6.18-3.482 6.183-3.612-6.106z" />
+            <path style="fill:#f98b00"
+                d="m35.176 29.381 6.695 2.351 6.692 2.351-5.381 4.622-5.384 4.621-1.311-6.971z" />
+            <path style="fill:#f98b00" d="m50.621 20.638 5.49 4.496 5.49 4.494-6.636 2.506-6.64 2.507 1.149-7z" />
+            <circle style="fill:#ffe100" cx="68.897" cy="68.898" r="40.552" />
+        </symbol>
+        <!-- youtube -->
         <symbol id="icon-youtube" viewBox="0 0 48 48">
             <path fill="#FF3D00"
                 d="M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z" />

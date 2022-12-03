@@ -1,0 +1,157 @@
+// -----------------DARKMODE CHANGE STYLE----------------
+
+.darkmode {
+  background-color: $background-color;
+}
+
+// -----------------darkmode header-----------------
+
+.darkmode .nav__logo-icon {
+  stroke: $header-color;
+
+  &:hover {
+    stroke: $darkmode-color-one;
+  }
+}
+
+.darkmode .nav__logo-title {
+  &:hover {
+    color: $header-color;
+    color: $darkmode-color-one;
+  }
+}
+
+.darkmode .nav__link {
+  color: $header-color;
+
+  &:hover {
+    color: $darkmode-color-one;
+  }
+}
+.darkmode ::placeholder {
+  color: $header-color;
+}
+
+.darkmode .header__input {
+  color: $header-color;
+  border-color: $header-color;
+
+  &:hover {
+    border-color: $darkmode-color-one;
+  }
+}
+
+.darkmode .header__search-icon {
+  stroke: $header-color;
+  fill: none;
+
+  &:hover {
+    stroke: $darkmode-color-one;
+  }
+}
+
+.darkmode .header__form-message {
+  color: $darkmode-color-three;
+}
+
+.darkmode .header__button {
+  background-color: $header-color;
+}
+
+.darkmode .header__button--active {
+  background-color: $darkmode-color-two;
+  box-shadow: 0 8px 43px $darkmode-color-two;
+}
+
+// -----------------darkmode hero-----------------
+
+.darkmode .films__title {
+  color: $darkmode-color-one;
+}
+
+.darkmode .films__genres {
+  color: $darkmode-color-two;
+}
+
+// -----------------darkmode modal-----------------
+
+.darkmode .modal {
+  background-color: $background-color;
+}
+
+.darkmode .card__film-title,
+.darkmode .card__about {
+  color: $darkmode-color-two;
+}
+
+.darkmode .card__info-wrapper,
+.darkmode .card__subdivision,
+.darkmode .card__description {
+  color: $darkmode-color-one;
+}
+
+.darkmode .card__vote-title,
+.darkmode .btn-add-watched {
+  background-color: $darkmode-color-two;
+}
+
+.darkmode .btn-add-queue {
+  background-color: $header-color;
+}
+
+.darkmode .card__vote-number {
+  color: $background-color;
+  background-color: $header-color;
+}
+
+.darkmode .icon-close {
+  stroke: $darkmode-color-two;
+}
+
+// -----------------scroll up----------------
+
+.darkmode #back-to-top,
+.darkmode #back-to-top:hover {
+  background-color: $darkmode-color-two;
+}
+
+// -----------------darkmode pagination-----------------
+
+.darkmode .tui-pagination .tui-page-btn {
+  color: $header-text-color;
+  border: 1px solid $darkmode-color-two;
+}
+
+.darkmode .tui-pagination .tui-page-btn:hover {
+  background-color: $darkmode-color-one;
+}
+
+.darkmode .tui-pagination .tui-is-selected,
+.tui-pagination strong {
+  color: $header-text-color;
+  background-color: $darkmode-color-two;
+  border: $darkmode-color-two;
+}
+
+.darkmode .tui-page-inputs .tui-page-input {
+  color: $header-text-color;
+}
+
+// -----------------darkmode footer-----------------
+
+.darkmode .footer {
+  background-color: $footer-color-darkmode;
+}
+
+.darkmode .footer__list-item,
+.darkmode .footer__btn {
+  color: $header-color;
+}
+
+.darkmode .footer__btn:hover {
+  color: $darkmode-color-one;
+}
+
+.darkmode .footer__list-icon {
+  fill: $darkmode-color-two;
+}
