@@ -83,4 +83,13 @@ export class MovieApi {
   resetPage() {
     this.page = 1;
   }
+
+  async fetchFilmById(id) {
+    const searchParams = {
+      headers: {
+        Authorization: `${this.#BEARER_TOKEN}`,
+      }
+    };
+    return await axios.get(`${this.#BASE_URL + 'movie/' + id}`, searchParams);
+  }
 }
