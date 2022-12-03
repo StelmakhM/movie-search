@@ -1,15 +1,15 @@
 const refs = {
-    filmCard: document.querySelector('.modal'),
-    filmsContainer: document.querySelector('.films__list'),
-    cardTitle : document.querySelector('[data-card-title]'),
-    cardAvarageVotes : document.querySelector('[data-card-avarage-votes]'),
-    cardTotalVotes : document.querySelector('[data-card-total-votes]'),
-    cardPopularity: document.querySelector('[data-card-popularity]'),
-    cardOriginalTitle : document.querySelector('[data-card-original-title]'),
-    cardGenres : document.querySelector('[data-card-genre]'),
-    cardOverview : document.querySelector('[data-card-overview]'),
-    cardImage : document.querySelector('[data-card-image]'),
-    cardModal : document.querySelector('[data-card-modal]')
+  filmCard: document.querySelector('.modal'),
+  filmsContainer: document.querySelector('.films__list'),
+  cardTitle: document.querySelector('[data-card-title]'),
+  cardAvarageVotes: document.querySelector('[data-card-avarage-votes]'),
+  cardTotalVotes: document.querySelector('[data-card-total-votes]'),
+  cardPopularity: document.querySelector('[data-card-popularity]'),
+  cardOriginalTitle: document.querySelector('[data-card-original-title]'),
+  cardGenres: document.querySelector('[data-card-genre]'),
+  cardOverview: document.querySelector('[data-card-overview]'),
+  cardImage: document.querySelector('[data-card-image]'),
+  cardModal: document.querySelector('[data-card-modal]'),
 };
 
 export function renderFilmCard(e) {
@@ -24,7 +24,7 @@ export function renderFilmCard(e) {
     refs.cardAvarageVotes.innerHTML = Number.parseFloat(voteAverage).toFixed(1);
     refs.cardTotalVotes.innerHTML = voteCount;
     refs.cardPopularity.innerHTML = Number.parseFloat(populatiry).toFixed(1);
-    refs.cardOriginalTitle.innerHTML = originalTitle;
+    refs.cardOriginalTitle.innerHTML = (originalTitle.length < 17) ? originalTitle : originalTitle.slice(0, 17) + '...';
     refs.cardGenres.innerHTML = fixedGenres;
     refs.cardOverview.innerHTML = overview;
     refs.cardImage.src = posterPath;
@@ -35,4 +35,3 @@ export function renderFilmCard(e) {
         refs.cardModal.dataset[key] = filmObject[key];
     }
 }
-
