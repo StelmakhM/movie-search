@@ -24,7 +24,7 @@ export function renderFilmCard(e) {
     refs.cardAvarageVotes.innerHTML = Number.parseFloat(voteAverage).toFixed(1);
     refs.cardTotalVotes.innerHTML = voteCount;
     refs.cardPopularity.innerHTML = Number.parseFloat(populatiry).toFixed(1);
-    refs.cardOriginalTitle.innerHTML = originalTitle;
+    refs.cardOriginalTitle.innerHTML = (originalTitle.length < 17) ? originalTitle : originalTitle.slice(0, 17) + '...';
     refs.cardGenres.innerHTML = fixedGenres;
     refs.cardOverview.innerHTML = overview;
     refs.cardImage.src = posterPath;
