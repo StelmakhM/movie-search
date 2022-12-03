@@ -166,3 +166,21 @@
 .darkmode .footer__list-icon {
   fill: $darkmode-color-two;
 }
+
+// -----------------modal team-----------------
+
+.darkmode .modal-team {
+  background-color: $background-color;
+}
+
+.darkmode .team__title {
+  color: $darkmode-color-two;
+}
+
+.darkmode .team__name {
+  color: $darkmode-color-one;
+}
+
+.darkmode .team__position {
+  color: $darkmode-color-two;
+}
