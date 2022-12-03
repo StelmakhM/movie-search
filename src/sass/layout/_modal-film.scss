@@ -51,6 +51,8 @@
   transition-property: transform;
   transition-duration: 500ms;
 
+  cursor: pointer;
+
   &:hover {
     transform: scale(1.3);
   }
@@ -63,6 +65,9 @@
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;
+
+  width: 30px;
+  height: 30px;
 }
 
 .general-wrapper {
@@ -135,7 +140,6 @@ img {
   font-size: 12px;
   line-height: 1.33;
   color: $film-information-color;
-
 }
 
 .card__subdivision:not(:last-child) {
@@ -145,7 +149,7 @@ img {
 .card__votes {
   display: flex;
   justify-content: flex-start;
-  }
+}
 
 .card__vote-title {
   display: flex;
