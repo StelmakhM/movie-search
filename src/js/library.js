@@ -11,8 +11,7 @@ refs.buttonWatched.addEventListener('click', loadWatched);
 refs.buttonQueued.addEventListener('click', loadQueued);
 const movieApi = new MovieApi();
 
-async function onWindowLoad(e) {
-    e.preventDefault()
+async function onWindowLoad() {
 	try {
 		await loadWatched();
 	} catch (error) {
@@ -20,8 +19,7 @@ async function onWindowLoad(e) {
 	}
 }
 
-async function loadQueued(e) {
-    e.preventDefault()
+async function loadQueued() {
 	try {
 		let itemQueue = JSON.parse(localStorage.getItem('queued')) ?? [];
         let items = [];
@@ -30,6 +28,7 @@ async function loadQueued(e) {
             console.log(filmId);
             const { data } = await movieApi.fetchFilmById(filmId);
             items.push(data);
+            console.log(data);
         }
 		refs.filmsContainer.innerHTML = createMarkUp(items);
 	} catch (error) {
@@ -37,8 +36,7 @@ async function loadQueued(e) {
 	}
 }
 
-async function loadWatched(e) {
-    e.preventDefault()
+async function loadWatched() {
 	try {
 		let itemWatched = JSON.parse(localStorage.getItem('watched')) ?? [];
         let items = [];
