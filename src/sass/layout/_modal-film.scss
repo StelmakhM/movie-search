@@ -326,3 +326,58 @@ img {
   transition: all 250ms;
   fill: $header-underline-color;
 }
+
+// ---------------вариант 2 ---------------
+// .card__img-wrapper {
+//   position: relative;
+
+//   max-height: 478px;
+
+//   @media screen and (min-width: 768px) {
+//     margin-right: 68px;
+//   }
+
+//   @media screen and (min-width: 1280px) {
+//     margin-right: 16px;
+//   }
+// }
+
+// .trailer__container {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   width: 100%;
+//   height: 100%;
+
+//   opacity: 0.3;
+
+//   transition: all 250ms;
+
+//   @media screen and (min-width: 768px) and (max-width: 1279px) {
+//     height: 374px;
+//   }
+// }
+
+// .trailer__container {
+//   &:hover {
+//     background-color: $backdropColor;
+//     opacity: 1;
+//     transition: opacity 250ms;
+//   }
+// }
+
+// .trailer__btn {
+//   background-color: transparent;
+
+//   transition: all 250ms;
+
+//   cursor: pointer;
+
+//   &:hover {
+//     transform: scale(1.3);
+//   }
+// }
