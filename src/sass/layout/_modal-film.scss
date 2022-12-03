@@ -119,7 +119,7 @@ img {
   margin-bottom: 20px;
 
   @media screen and (min-width: 1280px) {
-    width: 259px;
+    width: 391px;
   }
 }
 
@@ -133,10 +133,12 @@ img {
 
 .card__subdivision {
   display: flex;
+  white-space: nowrap;
 
   font-size: 12px;
   line-height: 1.33;
   color: $film-information-color;
+
 }
 
 .card__subdivision:not(:last-child) {
@@ -146,11 +148,13 @@ img {
 .card__votes {
   display: flex;
   justify-content: flex-start;
-}
+  }
 
 .card__vote-title {
   display: flex;
   justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 10px;
 
   width: 36px;
   height: 16px;
@@ -163,8 +167,13 @@ img {
 }
 
 .card__vote-number {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+
   width: 36px;
   height: 16px;
+  font-size: 12px;
 
   background: $footer-color;
 
@@ -174,7 +183,7 @@ img {
 .card__info-text {
   line-height: 1.16;
   text-transform: uppercase;
-  margin-bottom: 8px;
+  margin-bottom: 9px;
   font-size: 12px;
 }
 
