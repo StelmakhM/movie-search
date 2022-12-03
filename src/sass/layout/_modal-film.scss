@@ -7,10 +7,11 @@
   background-color: rgba(0, 0, 0, 0.644);
   z-index: 10;
   overflow-y: scroll;
+  transition: all 0.8s ease 0s;
 }
 
 .backdrop.is-hidden {
-  display: none;
+  opacity: 0;
   pointer-events: none;
 }
 
@@ -31,6 +32,14 @@
     padding-left: 29px;
     top: 50%;
   }
+    background-color: $header-text-color;
+  
+    @media screen and (min-width: 768px) {
+        width: 704px;
+        padding-top: 40px;
+        padding-left: 29px;
+        top: 50%;
+    }
 
   @media screen and (min-width: 1280px) {
     width: 806px;
@@ -49,10 +58,10 @@
   background: none;
   transition-property: transform;
   transition-duration: 500ms;
-}
 
-.modal__btn-close:hover {
-  transform: scale(1.3);
+  &:hover {
+    transform: scale(1.3);
+  }
 }
 
 .icon {
@@ -62,6 +71,13 @@
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;
+}
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    stroke-width: 0;
+    stroke: currentColor;
+    fill: currentColor;
 }
 
 .general-wrapper {
@@ -109,9 +125,7 @@ img {
 
 .card__info-wrapper {
   display: flex;
-  // justify-content: space-between;
   justify-content: flex-start;
-  // width: 215px;
   margin-bottom: 20px;
 
   @media screen and (min-width: 1280px) {
@@ -127,7 +141,6 @@ img {
   }
 }
 
-// .card__info-wrapper-left
 .card__subdivision {
   display: flex;
 
@@ -234,15 +247,24 @@ img {
     width: 125.03px;
   }
 
+  transition-property: transform;
+  transition-duration: 500ms;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  @media screen and (min-width: 768px) {
+    padding: 13px 9px;
+    margin-right: 20px;
+    width: 125.03px;
+  }
+
   @media screen and (min-width: 1280px) {
     padding: 13px 9px;
     margin-right: 20px;
     width: 136px;
   }
-}
-
-.btn-add-watched:hover {
-  transform: scale(1.1);
 }
 
 .btn-add-queue {
@@ -261,6 +283,10 @@ img {
   transition-property: transform;
   transition-duration: 500ms;
 
+  &:hover {
+    transform: scale(1.1);
+  }
+
   @media screen and (min-width: 768px) {
     width: 125.03px;
   }
@@ -268,8 +294,4 @@ img {
   @media screen and (min-width: 1280px) {
     width: 136px;
   }
-}
-
-.btn-add-queue:hover {
-  transform: scale(1.1);
 }
