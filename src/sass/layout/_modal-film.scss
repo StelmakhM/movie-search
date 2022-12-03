@@ -76,6 +76,11 @@
   @media screen and (min-width: 768px) {
     margin-right: 68px;
   }
+  position: relative;
+  max-height: 478px;
+  @media screen and (min-width: 768px) {
+    margin-right: 68px;
+  }
 
   @media screen and (min-width: 1280px) {
     margin-right: 16px;
@@ -139,8 +144,6 @@ img {
 }
 
 .card__votes {
-  display: flex;
-  justify-content: center;
   display: flex;
   justify-content: flex-start;
 }
@@ -226,15 +229,6 @@ img {
   transition-property: transform;
   transition-duration: 500ms;
 
-  @media screen and (min-width: 768px) {
-    padding: 13px 9px;
-    margin-right: 20px;
-    width: 125.03px;
-  }
-
-  transition-property: transform;
-  transition-duration: 500ms;
-
   &:hover {
     transform: scale(1.1);
   }
@@ -278,5 +272,47 @@ img {
 
   @media screen and (min-width: 1280px) {
     width: 136px;
+  }
+}
+
+// --------------Trailer-------------
+
+.trailer__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+
+  opacity: 0.3;
+
+  transition: all 250ms;
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    height: 374px;
+  }
+}
+
+.trailer__container {
+  &:hover {
+    background-color: $backdropColor;
+    opacity: 1;
+    transition: opacity 250ms;
+  }
+}
+
+.trailer__btn {
+  background-color: transparent;
+
+  transition: all 250ms;
+
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.3);
   }
 }
