@@ -99,27 +99,43 @@
   }
 }
 
+.nav__logo-icon {
+  stroke: $header-text-color;
+
+  transition: $main-animation;
+
+  &:hover {
+    stroke: $button-color;
+  }
+}
+
 .nav__logo-title {
   @include text-design(500, 30px, calc(35 / 30), 0.03em);
   color: $header-text-color;
 
+  transition: $main-animation;
+
   @media screen and (max-width: 767px) {
-      position: absolute;
-      white-space: nowrap;
-      width: 1px;
-      height: 1px;
-      overflow: hidden;
-      border: 0;
-      padding: 0;
-      clip: rect(0 0 0 0);
-      clip-path: inset(50%);
-      margin: -1px;
+    position: absolute;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+
+    overflow: hidden;
+    border: 0;
+  }
+
+  &:hover {
+    color: $button-color;
   }
 }
 
 .nav__list {
   display: flex;
   gap: 39px;
+
   margin-left: auto;
 }
 
@@ -129,7 +145,13 @@
 
   outline: transparent;
 
+  transition: $main-animation;
+
   cursor: pointer;
+
+  &:hover {
+    color: $button-color;
+  }
 }
 
 .nav__link.current::after {
@@ -162,12 +184,19 @@
   border-bottom: 1px solid $header-text-color;
   outline: transparent;
 
+  transition: $main-animation;
+
   @media screen and (min-width: 768px) {
     width: 336px;
   }
 
   @media screen and (min-width: 1280px) {
     width: 394px;
+  }
+
+  &:hover {
+    border-color: $button-color;
+    color: $button-color;
   }
 }
 
@@ -183,7 +212,13 @@
   stroke: $header-text-color;
   fill: none;
 
+  animation: $main-animation;
+
   cursor: pointer;
+
+  &:hover {
+    stroke: $button-color;
+  }
 }
 
 .header__form-message {
@@ -245,4 +280,64 @@
   background-color: $modal-button-color;
   border: transparent;
   box-shadow: 0 8px 43px rgba(255, 107, 1, 0.6);
+}
+
+// ----------------- DARKMODE -----------------
+
+.theme {
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
+  z-index: 11;
+
+  background-color: transparent;
+  border: transparent;
+  border-radius: 50%;
+
+  cursor: pointer;
+}
+
+.theme {
+  &:hover {
+    transform: scale(1.02);
+  }
+}
+
+.theme__container {
+  position: relative;
+
+  height: 50px;
+  width: 50px;
+}
+
+.theme__icon-dark {
+  position: absolute;
+  top: 0;
+  left: -2px;
+
+  border-radius: 50%;
+  box-shadow: 0 0 5px 0 rgb(0 0 0 / 260%);
+
+  transition: $main-animation;
+}
+
+.theme__icon-dark--hide {
+  transform: translateX(70px);
+
+  opacity: 0;
+}
+
+.theme__icon-light {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  transform: translate(-14%, -14%);
+  transition: $main-animation;
+}
+
+.theme__icon-light--hide {
+  transform: translateX(70px);
+
+  opacity: 0;
 }
