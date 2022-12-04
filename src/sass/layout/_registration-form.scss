@@ -311,7 +311,8 @@
 
 // ================================
 .header__box-login-logout {
-  position: absolute;
+  // position: absolute;
+  padding: 0;
   top: auto;
   right: 32px;
   display: flex;
@@ -330,14 +331,10 @@
   }
 }
 
-#loginUser {
-  @media screen and (max-width: 425px) {
-    width: 100px;
-  }
-}
 button:hover {
   cursor: pointer;
 }
+
 .header__btn-login {
   font-size: 12px;
   text-align: center;
@@ -355,15 +352,29 @@ button:hover {
     background: $button-color;
     cursor: pointer;
     transform: scale(0.95);
-
     // @media screen and(min-width: 768px) {
     //   animation: spinLogin 2400ms infinite;
     // }
   }
+
   @media screen and(min-width: 480px) {
     margin-left: 20px;
   }
 }
+
+#loginUser {
+  display: none;
+  @media screen and (max-width: 425px) {
+    width: 100px;
+  }
+
+  &:hover .header__btn-login {
+    font-size: 15px;
+    color: aquamarine;
+    display: block;
+  }
+}
+
 // @keyframes spinLogin {
 //   0% {
 //     transform: rotateY(0deg);
