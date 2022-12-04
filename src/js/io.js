@@ -1,4 +1,4 @@
-import { createGenreFromId, createMarkUp, movieApi, refs, addGenresToSessionStorage, isSearchActive } from "./films";
+import { createGenreFromId, createMarkUp, movieApi, refs, addGenresToSessionStorage,} from "./films";
 import { playSpinner, stopSpinner } from "./spinner";
 
 export function registerIntersectionObserver(target) {

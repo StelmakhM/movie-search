@@ -1,6 +1,6 @@
 import { Notify } from 'notiflix';
 export { watchedArr, queueArr };
-import { addToLocalStorage, getFromLocalStorage } from './storage';
+import { addToLocalStorage, getFromLocalStorage } from '../storage';
 
 const refs = {
   addToWatchedBtn: document.querySelector('.btn-add-watched'),

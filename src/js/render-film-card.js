@@ -29,7 +29,7 @@ export function renderFilmCard(e) {
     refs.cardOverview.innerHTML = overview;
     refs.cardImage.src = posterPath;
 
-    
+
     
     for(let key in filmObject) {
         refs.cardModal.dataset[key] = filmObject[key];
