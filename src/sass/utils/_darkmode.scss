@@ -83,19 +83,24 @@
   color: $darkmode-color-two;
 }
 
+.darkmode .btn-wrapper button {
+  background-color: $header-color;
+  border: transparent;
+
+  &:hover {
+    background-color: $darkmode-color-two;
+    color: $header-text-color;
+  }
+}
+
 .darkmode .card__info-wrapper,
 .darkmode .card__subdivision,
 .darkmode .card__description {
   color: $darkmode-color-one;
 }
 
-.darkmode .card__vote-title,
-.darkmode .btn-add-watched {
+.darkmode .card__vote-title {
   background-color: $darkmode-color-two;
-}
-
-.darkmode .btn-add-queue {
-  background-color: $header-color;
 }
 
 .darkmode .card__vote-number {
