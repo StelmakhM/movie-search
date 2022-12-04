@@ -213,10 +213,11 @@
   color: $register-form-text-color;
   border-color: $register-form-text-color;
   background-color: rgb(3, 185, 167, 0.5);
+}
 
-  &:hover {
-    background-color: rgb(3, 185, 167, 0.5);
-  }
+.darkmode .header__btn-login:hover,
+.darkmode .header__btn-login:focus {
+  background: rgb(3, 185, 167, 0.5);
 }
 
 .darkmode .register-form__sign-in {
@@ -274,6 +275,6 @@
   color: $register-form-text-color;
 }
 
-.overlay {
-  background: $background-color;
+.darkmode .overlay {
+  background: #1b6db9;
 }
