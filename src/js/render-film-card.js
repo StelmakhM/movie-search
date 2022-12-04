@@ -9,7 +9,7 @@ const refs = {
   cardGenres: document.querySelector('[data-card-genre]'),
   cardOverview: document.querySelector('[data-card-overview]'),
   cardImage: document.querySelector('[data-card-image]'),
-  cardModal: document.querySelector('[data-card-modal]'),
+  cardModal: document.querySelector('#film-modal'),
 };
 
 export function renderFilmCard(e) {
@@ -29,7 +29,7 @@ export function renderFilmCard(e) {
     refs.cardOverview.innerHTML = overview;
     refs.cardImage.src = posterPath;
 
-    console.log(filmObject);
+    
     
     for(let key in filmObject) {
         refs.cardModal.dataset[key] = filmObject[key];

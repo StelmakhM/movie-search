@@ -11,3 +11,4 @@ import './js/refs';
 import './js/fireBaseApp/firebase-app';
 import './js/registration-form';
 import './js/darkmode';
+import './js/save-buttons';
