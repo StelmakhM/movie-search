@@ -1,6 +1,7 @@
 .register-form__tite {
   font-size: 28px;
   font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .register-form__pre-tite {
@@ -269,7 +270,9 @@
 }
 
 .social__container {
-  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 // error box
@@ -320,7 +323,7 @@
     font-size: 11px;
   }
   @media screen and(min-width: 480px) {
-    top: 150px;
+    top: 130px;
     & > span {
       font-size: 12px;
     }
@@ -351,24 +354,24 @@ button:hover {
   &:focus {
     background: $button-color;
     cursor: pointer;
+    transform: scale(0.95);
 
-    @media screen and(min-width: 768px) {
-      animation: spinLogin 2400ms infinite;
-    }
+    // @media screen and(min-width: 768px) {
+    //   animation: spinLogin 2400ms infinite;
+    // }
   }
   @media screen and(min-width: 480px) {
     margin-left: 20px;
-    // padding: 10px;
   }
 }
-@keyframes spinLogin {
-  0% {
-    transform: rotateY(0deg);
-  }
-  100% {
-    transform: rotateY(360deg);
-  }
-}
+// @keyframes spinLogin {
+//   0% {
+//     transform: rotateY(0deg);
+//   }
+//   100% {
+//     transform: rotateY(360deg);
+//   }
+// }
 
 .header__btn-login:active {
   transform: scale(0.95);
@@ -382,13 +385,11 @@ button:hover {
     top: 57px;
     right: 52px;
     width: 200px;
-    background: rgba(165, 180, 180, 0.219);
-    backdrop-filter: blur(30px);
-    color: rgb(243, 255, 80);
+    background: rgba(0, 0, 0, 0.699);
+    backdrop-filter: blur(5px);
+    color: rgb(255, 255, 255);
     @include font(700, 18, 20);
-    border-radius: 20px;
-    border-top-right-radius: 0;
-    border: 1px solid rgb(126, 124, 102);
+    border-radius: 15px;
     display: none;
     z-index: 5;
     flex-direction: column;
@@ -438,30 +439,32 @@ button:hover {
   }
   &__hiden {
     padding: 10px;
-    background-color: rgba(92, 91, 83, 0.788);
     border-radius: 15px;
   }
   &.active-user-menu &__hidden {
     display: block;
   }
   &__item {
-    padding: 5px 10px;
+    padding: 5px;
+    border-radius: 10px;
     transition: 250ms;
-    border-radius: 15px;
     &:hover {
       cursor: pointer;
-      background-color: rgba(199, 180, 8, 0.664);
-      transform: scale(1.05);
-      color: gray;
+      background-color: rgb(255, 255, 255);
+      transform: scale(0.95);
+      color: #050404;
     }
   }
-  &__item:not(:last-child) {
-    border-bottom: 1px solid #000;
+  &__item {
+    border-bottom: 1px solid rgb(252, 237, 237);
     margin-bottom: 10px;
     text-align: center;
   }
   &__item--btn {
     @include displayFlex();
+    &:hover {
+      background: orange;
+    }
   }
   &__btn-logout {
     @include displayFlex();
@@ -482,13 +485,21 @@ button:hover {
   font-weight: 700;
   display: flex;
   align-items: center;
+  color: rgb(253, 17, 17);
 }
 
 .user-menu__item-title {
   text-align: center;
   margin-bottom: 10px;
-  color: greenyellow;
-  border: 1px solid greenyellow;
+  color: orange;
+  border: 1px solid orange;
   border-radius: 15px;
   padding: 8px;
+}
+.gmail__login {
+  width: 35px;
+  height: 35px;
+}
+.social__btn--google {
+  background: inherit;
 }
