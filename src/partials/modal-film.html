@@ -15,7 +15,7 @@
           />
           <path fill="#FFF" d="M20 31L20 17 32 24z" />
         </symbol>
-        <div class="trailer__container">
+        <!-- <div class="trailer__container">
           <button
             class="trailer__btn"
             type="button"
@@ -26,10 +26,10 @@
               <use href="./images/sprite.svg#icon-youtube"></use>
             </svg>
           </button>
-        </div>
+        </div> -->
         <img data-card-image src="./images/Rectangle 18.jpg" alt="film-name" />
       </div>
-      <div>
+      <div class="card__text-container">
         <h2 data-card-title class="card__film-title">${film name}</h2>
         <div class="card__info-wrapper">
           <div class="card__info-wrapper-left">
@@ -61,11 +61,23 @@
           But not all goes to plan one is killed and the other three escapes
           with bags of gold hide out in the abandoned gold mine where they
           happen across another gang.
-        
         </p>
         <div class="btn-wrapper">
           <button class="btn-add-watched" type="button">add to Watched</button>
           <button class="btn-add-queue" type="button">add to queue</button>
+        </div>
+        <div class="trailer__container">
+          <button
+            class="trailer__btn"
+            type="button"
+            data-id="${id}"
+            data-name="${originalTitle}"
+          >
+            <svg class="trailer__icon" width="70" height="70">
+              <use href="./images/sprite.svg#icon-youtube"></use>
+            </svg>
+            WATCH TRAILER ON YOUTUBE
+          </button>
         </div>
       </div>
     </div>
