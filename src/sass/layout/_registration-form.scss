@@ -341,7 +341,7 @@ button:hover {
   font-size: 10px;
   text-align: center;
   border: 1px solid #ffffff;
-  @include displayFlex();
+  display: none;
   padding: 8px 15px;
   border-radius: 20px;
   color: #ffffff;
@@ -389,6 +389,7 @@ button:hover {
 
 .user-menu {
   position: relative;
+  animation: nun 0.1s ease-in;
   &__box {
     position: absolute;
     text-transform: none;
@@ -483,6 +484,15 @@ button:hover {
     @include displayFlex();
     background: none;
     color: inherit;
+  }
+}
+
+@keyframes nun {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
   }
 }
 

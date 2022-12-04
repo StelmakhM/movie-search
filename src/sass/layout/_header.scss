@@ -302,10 +302,7 @@
 // ----------------- DARKMODE -----------------
 
 .theme {
-  position: fixed;
-  bottom: 90px;
-  right: 20px;
-  z-index: 11;
+  position: relative;
 
   background-color: transparent;
   border: transparent;
@@ -321,7 +318,10 @@
 }
 
 .theme__container {
-  position: relative;
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  z-index: 11;
 
   height: 50px;
   width: 50px;
