@@ -174,6 +174,7 @@
 }
 
 .header__input {
+  text-transform: uppercase;
   width: 280px;
   @include text-design(400, 14px, calc(16 / 14), 0.03em);
   color: $header-text-color;
@@ -181,7 +182,7 @@
   border-bottom: 1px solid $header-text-color;
   outline: transparent;
   border-radius: 15px;
-  padding: 3px;
+  padding: 10px;
   transition: $main-animation;
   text-align: center;
   position: relative;
@@ -193,13 +194,31 @@
   }
 
   &:hover {
+    background-color: rgba(255, 107, 2, 0.129);
+    border-color: $button-color;
+    color: $button-color;
+    transform: scale(1.05);
+  }
+  &:focus {
+    background-color: rgba(255, 107, 2, 0.129);
+    backdrop-filter: blur(90px);
     border-color: $button-color;
     color: $button-color;
   }
 }
 
 .darkmode .header__input {
-  color: $header-color;
+  color: $darkmode-color-one;
+  &:hover {
+    background-color: #03b9a722;
+    transform: scale(1.05);
+    border-color: #03b9a7;
+  }
+  &:focus {
+    background-color: #03b9a727;
+    backdrop-filter: blur(90px);
+    border-color: #03b9a7;
+  }
 }
 
 ::placeholder {
@@ -209,7 +228,6 @@
 
 .header__search-icon {
   position: absolute;
-  margin-right: 10px;
   transform: translate(-100%, -70%);
   stroke: $header-text-color;
   fill: none;
