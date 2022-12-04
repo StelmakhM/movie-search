@@ -33,7 +33,6 @@
 }
 
 .darkmode .header__input {
-  color: $header-color;
   border-color: $header-color;
 
   &:hover {
@@ -84,19 +83,24 @@
   color: $darkmode-color-two;
 }
 
+.darkmode .btn-wrapper button {
+  background-color: $header-color;
+  border: transparent;
+
+  &:hover {
+    background-color: $darkmode-color-two;
+    color: $header-text-color;
+  }
+}
+
 .darkmode .card__info-wrapper,
 .darkmode .card__subdivision,
 .darkmode .card__description {
   color: $darkmode-color-one;
 }
 
-.darkmode .card__vote-title,
-.darkmode .btn-add-watched {
+.darkmode .card__vote-title {
   background-color: $darkmode-color-two;
-}
-
-.darkmode .btn-add-queue {
-  background-color: $header-color;
 }
 
 .darkmode .card__vote-number {
@@ -106,6 +110,14 @@
 
 .darkmode .icon-close {
   stroke: $darkmode-color-two;
+}
+
+.darkmode .trailer__icon {
+  fill: $darkmode-color-one;
+}
+
+.darkmode .trailer__btn {
+  color: $darkmode-color-one;
 }
 
 // -----------------scroll up----------------
@@ -123,18 +135,22 @@
 }
 
 .darkmode .tui-pagination .tui-page-btn:hover {
-  background-color: $darkmode-color-one;
+  background-color: $darkmode-color-two;
 }
 
 .darkmode .tui-pagination .tui-is-selected,
 .tui-pagination strong {
   color: $header-text-color;
   background-color: $darkmode-color-two;
-  border: $darkmode-color-two;
 }
 
 .darkmode .tui-page-inputs .tui-page-input {
   color: $header-text-color;
+}
+
+.darkmode .tui-page-btn {
+  background-color: $darkmode-color-one;
+  border-radius: 50%;
 }
 
 // -----------------darkmode footer-----------------
@@ -155,3 +171,31 @@
 .darkmode .footer__list-icon {
   fill: $darkmode-color-two;
 }
+
+// -----------------modal team-----------------
+
+.darkmode .modal-team {
+  background-color: $background-color;
+}
+
+.darkmode .team__title {
+  color: $darkmode-color-two;
+}
+
+.darkmode .team__name {
+  color: $darkmode-color-one;
+}
+
+.darkmode .team__position {
+  color: $darkmode-color-two;
+}
+
+.darkmode .icon-github {
+  display: inline-block;
+      width: 1em;
+      height: 1em;
+      stroke-width: 0;
+      stroke: currentColor;
+      fill: $darkmode-color-two;
+      // fill: currentColor;
+  }
