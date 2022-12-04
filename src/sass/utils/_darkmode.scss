@@ -184,3 +184,13 @@
 .darkmode .team__position {
   color: $darkmode-color-two;
 }
+
+.darkmode .icon-github {
+  display: inline-block;
+      width: 1em;
+      height: 1em;
+      stroke-width: 0;
+      stroke: currentColor;
+      fill: $darkmode-color-two;
+      // fill: currentColor;
+  }
