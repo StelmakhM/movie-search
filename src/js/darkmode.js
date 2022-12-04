@@ -14,11 +14,11 @@ document.querySelector('.theme').addEventListener('click', event => {
 function addDarkClassToHTML() {
   try {
     if (localStorage.getItem('theme') === 'dark') {
-      document.querySelector('html').classList.add('darkmode');
+      document.querySelector('body').classList.add('darkmode');
       darkEl.classList.add('theme__icon-dark--hide');
       lightEl.classList.remove('theme__icon-light--hide');
     } else {
-      document.querySelector('html').classList.remove('darkmode');
+      document.querySelector('body').classList.remove('darkmode');
       darkEl.classList.remove('theme__icon-dark--hide');
       lightEl.classList.add('theme__icon-light--hide');
     }

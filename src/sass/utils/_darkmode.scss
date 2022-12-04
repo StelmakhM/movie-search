@@ -15,8 +15,11 @@
 }
 
 .darkmode .nav__logo-title {
+  color: $header-color;
+}
+
+.darkmode .nav__logo-title {
   &:hover {
-    color: $header-color;
     color: $darkmode-color-one;
   }
 }
@@ -192,10 +195,81 @@
 
 .darkmode .icon-github {
   display: inline-block;
-      width: 1em;
-      height: 1em;
-      stroke-width: 0;
-      stroke: currentColor;
-      fill: $darkmode-color-two;
-      // fill: currentColor;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: $darkmode-color-two;
+  // fill: currentColor;
+}
+
+// -----------------register form-----------------
+
+.darkmode #loginUser {
+  color: $header-color;
+}
+
+.darkmode .header__btn-login {
+  color: $register-form-text-color;
+  border-color: $register-form-text-color;
+  background-color: rgb(3, 185, 167, 0.5);
+
+  &:hover {
+    background-color: $darkmode-color-one;
   }
+}
+
+.darkmode .register-form__sign-in {
+  background-color: $darkmode-color-one;
+}
+
+.darkmode .register-form__tite,
+.darkmode .register-form__link,
+.darkmode .register-form__pre-tite {
+  color: $register-form-text-color;
+}
+
+.darkmode .register-form__btn {
+  border: transparent;
+}
+
+.darkmode .overlay-right {
+  background-color: $darkmode-color-two;
+}
+
+.darkmode .overlay-left {
+  background-color: $darkmode-color-two;
+}
+
+.darkmode .register-form__sign-up {
+  background-color: $darkmode-color-one;
+}
+
+.darkmode .register-form__text {
+  color: $register-form-text-color;
+}
+
+.darkmode .register-form__btn {
+  background-color: $darkmode-color-two;
+  color: $register-form-text-color;
+}
+
+.darkmode .ghost {
+  background-color: $darkmode-color-one;
+}
+
+.darkmode .register-form__sign-in ::placeholder {
+  color: $register-form-text-color;
+}
+
+.darkmode .register-form__input {
+  color: $register-form-text-color;
+}
+
+.darkmode .errorlabel {
+  color: $darkmode-color-three;
+}
+
+.darkmode .register-form__sign-up ::placeholder {
+  color: $register-form-text-color;
+}
