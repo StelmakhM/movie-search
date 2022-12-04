@@ -4,6 +4,8 @@
   gap: 30px;
   padding-top: 20px;
   padding-bottom: 40px;
+  min-height: calc(100vh - 332px);
+
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
@@ -11,11 +13,15 @@
     gap: 32px;
     padding-top: 60px;
     padding-bottom: 60px;
+      min-height: calc(100vh - 301px);
+
   }
 
   @media screen and (min-width: 1280px) {
     row-gap: 50px;
     column-gap: 12px;
+  min-height: calc(100vh - 299px);
+
   }
 }
 

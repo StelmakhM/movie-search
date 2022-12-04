@@ -1,4 +1,4 @@
-export { addToSessionStorage, getFromSessionStorage, addToLocalStorage, getFromLocalStorage };
+export { addToSessionStorage, getFromSessionStorage, addToLocalStorage, getFromLocalStorage};
 
 function addToSessionStorage(key, value) {
   try {
