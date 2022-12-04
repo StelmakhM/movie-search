@@ -134,8 +134,8 @@
 
 .nav__list {
   display: flex;
+  align-items: center;
   gap: 39px;
-
   margin-left: auto;
 }
 
@@ -169,27 +169,25 @@
 
 .header__form {
   position: relative;
-
   display: flex;
   justify-content: center;
 }
 
 .header__input {
   width: 280px;
-
   @include text-design(400, 14px, calc(16 / 14), 0.03em);
   color: $header-text-color;
-
   background-color: transparent;
   border-bottom: 1px solid $header-text-color;
   outline: transparent;
-
+  border-radius: 15px;
+  padding: 3px;
   transition: $main-animation;
-
+  text-align: center;
+  position: relative;
   @media screen and (min-width: 768px) {
     width: 336px;
   }
-
   @media screen and (min-width: 1280px) {
     width: 394px;
   }
@@ -211,15 +209,12 @@
 
 .header__search-icon {
   position: absolute;
+  margin-right: 10px;
   transform: translate(-100%, -70%);
-
   stroke: $header-text-color;
   fill: none;
-
   animation: $main-animation;
-
   cursor: pointer;
-
   &:hover {
     stroke: $button-color;
   }

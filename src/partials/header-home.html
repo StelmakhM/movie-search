@@ -14,6 +14,61 @@
         <li class="nav__item">
           <a class="nav__link" href="./library.html">MY LIBRARY</a>
         </li>
+        <!--  =========  REGISTRATION  =========== -->
+        <li class="nav__item">
+          <div class="header__box-login-logout container">
+            <span id="loginUser"></span>
+            <button
+              id="btnLoginHeader"
+              class="header__btn-login"
+              type="button"
+              aria-label="Sign In"
+              name="login"
+            >
+              Sign In
+            </button>
+            <div class="user-menu" id="userMenu">
+              <img
+                src="./images/users_logo/boria.png"
+                alt="user photo"
+                class="user-menu__first-letter"
+                width="25"
+                height="25"
+                id="firstLetter"
+              />
+              <!-- <span id="firstLetter" class="user-menu__first-letter"> </span> -->
+              <div class="user-menu__box">
+                <p class="user-menu__title-hover">Добрий день Everybody!</p>
+                <div class="user-menu__hiden">
+                  <ul class="user-menu__list">
+                    <li class="user-menu__item-title" id="userMenuName"></li>
+                    <li class="user-menu__item" id="changePassword">Menu</li>
+                    <li class="user-menu__item" id="setting">Settings</li>
+                    <li class="user-menu__item user-menu__item--btn">
+                      <button
+                        id="btnLogoutHeader"
+                        class="user-menu__btn-logout"
+                        type="button"
+                        aria-label="logout"
+                        name="logout"
+                      >
+                        Logout
+                        <img
+                          src="./images/logout.png"
+                          class="logout__icon"
+                          alt="exit icon"
+                          width="25"
+                          height="25"
+                        />
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <!-- =========================================== -->
       </ul>
     </nav>
     <form class="header__form" id="header-form">
@@ -32,68 +87,6 @@
     <p class="header__form-message hidden">
       Search result not successful. Enter the correct movie name and try again
     </p>
-    <!--  =========  REGISTRATION  =========== -->
-    <div class="header__box-login-logout container">
-      <span id="loginUser"></span>
-      <button
-        id="btnLoginHeader"
-        class="header__btn-login"
-        type="button"
-        aria-label="login"
-        name="login"
-      >
-        Sign In
-      </button>
-      <button
-        id="btnLoginHeader"
-        class="header__btn-login"
-        type="button"
-        aria-label="login"
-        name="login"
-      >
-        Login
-      </button>
-      <div class="user-menu" id="userMenu">
-        <img
-          src="./images/users_logo/boria.png"
-          alt="user photo"
-          class="user-menu__first-letter"
-          width="25"
-          height="25"
-          id="firstLetter"
-        />
-        <!-- <span id="firstLetter" class="user-menu__first-letter"> </span> -->
-        <div class="user-menu__box">
-          <p class="user-menu__title-hover">Добрий день Everybody!</p>
-          <div class="user-menu__hiden">
-            <ul class="user-menu__list">
-              <li class="user-menu__item-title" id="userMenuName"></li>
-              <li class="user-menu__item" id="changePassword">Menu</li>
-              <li class="user-menu__item" id="setting">Settings</li>
-              <li class="user-menu__item user-menu__item--btn">
-                <button
-                  id="btnLogoutHeader"
-                  class="user-menu__btn-logout"
-                  type="button"
-                  aria-label="logout"
-                  name="logout"
-                >
-                  Logout
-                  <img
-                    src="./images/logout.png"
-                    class="logout__icon"
-                    alt="exit icon"
-                    width="25"
-                    height="25"
-                  />
-                </button>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- =========================================== -->
   </div>
   <button class="theme" type="button">
     <div class="theme__container">
