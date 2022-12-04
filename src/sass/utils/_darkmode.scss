@@ -237,6 +237,18 @@
   background-color: $darkmode-color-two;
 }
 
+.darkmode .overlay-left {
+  background-color: $darkmode-color-two;
+}
+
+.darkmode .register-form__sign-up {
+  background-color: $darkmode-color-one;
+}
+
+.darkmode .register-form__text {
+  color: $register-form-text-color;
+}
+
 .darkmode .register-form__btn {
   background-color: $darkmode-color-two;
   color: $register-form-text-color;
@@ -251,5 +263,13 @@
 }
 
 .darkmode .register-form__input {
+  color: $register-form-text-color;
+}
+
+.darkmode .errorlabel {
+  color: $darkmode-color-three;
+}
+
+.darkmode .register-form__sign-up ::placeholder {
   color: $register-form-text-color;
 }
