@@ -1,7 +1,7 @@
 import { MovieApi } from './movieApi';
 import Notiflix from 'notiflix';
 import { registerIntersectionObserver } from './io';
-import { addToSessionStorage, getFromSessionStorage } from './session-storage';
+import { addToSessionStorage, getFromSessionStorage } from './storage';
 import { createPagination } from './pagination';
 import { stopSpinner, playSpinner } from './spinner';
 export { movieApi, refs, createMarkUp, createGenreFromId };
