@@ -200,6 +200,10 @@
   }
 }
 
+.darkmode .header__input {
+  color: $header-color;
+}
+
 ::placeholder {
   @include text-design(400, 14px, calc(16 / 14), 0.03em);
   color: $header-text-color;

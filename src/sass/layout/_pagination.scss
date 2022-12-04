@@ -1,15 +1,38 @@
 .tui-pagination .tui-page-btn {
-    transition: background-color 250ms linear;
-    &:hover {
-        background-color: #FF8155;
-    }
+  transition: background-color 250ms linear;
+  font-family: relative;
+
+  font-weight: 600;
+
+  &:hover {
+    background-color: #ff6b01;
+    transform: scale(1.15);
+  }
 }
 
 .tui-pagination .tui-is-selected {
-    border: 1px solid #FF6B02;
-    background-color: #FF6B02;
-    transition: background-color 250ms linear;
-    &:hover {
-      background-color: #ff3b0a;
-    }
+  border: 1px solid #ff6b02;
+  background-color: #ff6b02;
+  transition: background-color 250ms linear;
+  &:hover {
+    background-color: #ff6b01;
   }
+}
+
+.tui-pagination .tui-page-btn {
+  border-radius: 11px;
+  margin-right: 5px;
+  border: 2px solid #ddd;
+}
+
+.tui-pagination .tui-is-selected {
+  border: 2px solid #ff6b02;
+}
+
+.tui-is-selected {
+  border: 2px solid #ff6b02;
+}
+
+.tui-pagination .tui-first-child.tui-is-selected {
+  border: 2px solid #ff6b02;
+}

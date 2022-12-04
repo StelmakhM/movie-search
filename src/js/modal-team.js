@@ -1,4 +1,5 @@
 const refs = {
+  // closeModalBtnTeam: document.querySelector('#modal-close-team'),
   closeModalBtnTeam: document.querySelector('.modal__btn-close-team'),
   linkTeam: document.querySelector('.footer__btn'),
   backdropTeamEl: document.querySelector('.backdrop-team'),
