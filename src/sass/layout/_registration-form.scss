@@ -276,7 +276,7 @@
 
 .errorlabel {
   display: block;
-  color: #ff0000;
+  color: #c92b2b;
   width: 100%;
   text-decoration: underline;
 }
@@ -379,15 +379,16 @@ button:hover {
   &__box {
     position: absolute;
     text-transform: none;
-    top: 40px;
-    right: 20px;
+    top: 57px;
+    right: 52px;
     width: 200px;
-    background: #fff;
-    color: orange;
+    background: rgba(165, 180, 180, 0.219);
+    backdrop-filter: blur(30px);
+    color: rgb(243, 255, 80);
     @include font(700, 18, 20);
     border-radius: 20px;
-    // border-top-right-radius: 0;
-    // border: 1px solid #000;
+    border-top-right-radius: 0;
+    border: 1px solid rgb(126, 124, 102);
     display: none;
     z-index: 5;
     flex-direction: column;
@@ -395,29 +396,27 @@ button:hover {
     transition: 250ms;
   }
   &__first-letter {
-    text-transform: uppercase;
-    border: 2px solid #fff;
     @include displayFlex();
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    @include font(700, 18, 20);
-    color: rgb(255, 255, 0);
-    // background: rgba(62, 212, 2, 0.674);
-    transition: 250ms;
+    width: 60px;
+    height: 60px;
+    border-radius: 20%;
+    background: linear-gradient(to bottom, #00a2ff 50%, #fbff00 50%);
+    transition: 950ms;
+    // animation: spin 6000ms infinite;
     &:hover + .user-menu__box {
       display: flex;
     }
     &:hover,
     &:focus {
-      color: #fff;
-      background: orange;
+      background: linear-gradient(to bottom, #d30000 50%, #242121 50%);
       cursor: pointer;
+      transform: scale(1.25);
     }
   }
 
   &__title-hover {
     @include displayFlex();
+    text-align: center;
     padding: 10px 5px;
   }
 
@@ -439,7 +438,7 @@ button:hover {
   }
   &__hiden {
     padding: 10px;
-    // background-color: #333;
+    background-color: rgba(92, 91, 83, 0.788);
     border-radius: 15px;
   }
   &.active-user-menu &__hidden {
@@ -448,22 +447,48 @@ button:hover {
   &__item {
     padding: 5px 10px;
     transition: 250ms;
-    border-radius: 30px;
+    border-radius: 15px;
     &:hover {
       cursor: pointer;
-      background-color: rgb(22, 148, 121);
+      background-color: rgba(199, 180, 8, 0.664);
+      transform: scale(1.05);
       color: gray;
     }
   }
   &__item:not(:last-child) {
-    // border-bottom: 1px solid #000;
+    border-bottom: 1px solid #000;
     margin-bottom: 10px;
+    text-align: center;
   }
   &__item--btn {
     @include displayFlex();
   }
   &__btn-logout {
+    @include displayFlex();
     background: none;
     color: inherit;
   }
+}
+
+.logout__icon {
+  padding: 0;
+  width: 25px;
+  height: 25px;
+  margin: 0;
+  margin-left: 6px;
+}
+
+.user-menu__btn-logout {
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+}
+
+.user-menu__item-title {
+  text-align: center;
+  margin-bottom: 10px;
+  color: greenyellow;
+  border: 1px solid greenyellow;
+  border-radius: 15px;
+  padding: 8px;
 }

@@ -4,6 +4,8 @@
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 11;
+
   width: 100%;
   height: 100%;
 
@@ -70,11 +72,11 @@
   }
 }
 
-
 //===================== ORANGE SPINNER ASYNC =============//
 
 @keyframes spinner-line-fade-more {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0; /* minimum opacity */
   }
   1% {
@@ -83,7 +85,9 @@
 }
 
 @keyframes spinner-line-fade-quick {
-  0%, 39%, 100% {
+  0%,
+  39%,
+  100% {
     opacity: 0.25; /* minimum opacity */
   }
   40% {
@@ -92,7 +96,8 @@
 }
 
 @keyframes spinner-line-fade-default {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.22; /* minimum opacity */
   }
   1% {
@@ -101,7 +106,9 @@
 }
 
 @keyframes spinner-line-shrink {
-  0%, 25%, 100% {
+  0%,
+  25%,
+  100% {
     /* minimum scale and opacity */
     transform: scale(0.5);
     opacity: 0.25;

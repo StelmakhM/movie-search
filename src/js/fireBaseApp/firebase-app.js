@@ -82,8 +82,9 @@ const monitorAuthState = async () => {
       refs.loginUser.innerHTML = '';
       refs.btnLoginHeader.style.display = 'none';
       refs.userMenu.style.display = 'flex';
-      refs.firstLetter.innerHTML = user.displayName.slice(0, 1);
-      refs.userMenuName.innerHTML = user.displayName.toUpperCase();
+      // refs.firstLetter.innerHTML = user.displayName.slice(0, 1);
+      refs.userMenuName.innerHTML = user.displayName;
+      // .toUpperCase();
     } else {
       refs.loginUser.innerHTML = `Click to login`;
       refs.btnLoginHeader.style.display = 'block';
