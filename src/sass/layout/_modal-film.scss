@@ -73,6 +73,9 @@
 }
 
 .card__img-wrapper {
+  @media screen and (min-width: 768px) {
+    margin-right: 68px;
+  }
   position: relative;
   max-height: 478px;
   @media screen and (min-width: 768px) {
