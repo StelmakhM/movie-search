@@ -50,15 +50,13 @@
   top: 8px;
   right: 8px;
   text-decoration: none;
-
   background: none;
   transition-property: transform;
   transition-duration: 500ms;
-
   cursor: pointer;
-
   &:hover {
-    transform: scale(1.3);
+    transform: scale(1.2);
+    color: $button-color;
   }
 }
 
@@ -303,17 +301,22 @@ img {
 .trailer__btn {
   display: flex;
   align-items: center;
-
   background-color: transparent;
-
   transition: all 250ms;
-
   cursor: pointer;
+  &:hover {
+    color: $modal-button-color;
+  }
 }
 
 .trailer__icon {
   transition: all 250ms;
   fill: $header-underline-color;
+}
+
+.trailer__btn:hover .trailer__icon {
+  fill: $modal-button-color;
+  stroke: $modal-button-color;
 }
 
 // ---------------вариант 2 ---------------

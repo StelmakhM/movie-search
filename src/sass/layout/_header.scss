@@ -129,6 +129,7 @@
 
   &:hover {
     color: $button-color;
+    transform: scale(0.97);
   }
 }
 
@@ -152,6 +153,13 @@
   &:hover {
     color: $button-color;
   }
+}
+.nav__item {
+  transition: 50ms;
+}
+
+.hover__scale:hover {
+  transform: scale(0.97);
 }
 
 .nav__link.current::after {
@@ -222,9 +230,31 @@
 }
 
 ::placeholder {
-  @include text-design(400, 14px, calc(16 / 14), 0.03em);
+  @include text-design(400, 12px, calc(16 / 14), 0.03em);
   color: $header-text-color;
 }
+
+.header__button-search {
+  position: absolute;
+  top: 20px;
+  right: 8px;
+  @media screen and (min-width: 480px) {
+    right: 8px;
+  }
+  @media screen and (min-width: 480px) {
+    right: 10px;
+  }
+  @media screen and (min-width: 768px) {
+    right: 190px;
+  }
+  @media screen and (min-width: 1280px) {
+    right: 420px;
+  }
+}
+// .header__input:hover .header__button-search,
+// .header__search-icon {
+//   transform: scale(1.1);
+// }
 
 .header__search-icon {
   position: absolute;
