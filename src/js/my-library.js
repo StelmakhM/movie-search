@@ -2,11 +2,14 @@ import { MovieApi } from './movieApi.js';
 import { getFromLocalStorage, addToLocalStorage } from './storage.js';
 import { Notify } from 'notiflix';
 import { closeModal } from './modal-film-library.js';
+import placeholderImagePath from '../images/ghostlibrary.png';
+
 
 const WATCHED_KEY = 'watchedList';
 const QUEUE_KEY = 'queueList';
 const watchedArr = getFromLocalStorage(WATCHED_KEY) || [];
 const queueArr = getFromLocalStorage(QUEUE_KEY) || [];
+const isCreated = false;
 
 const refs = {
   filmContainer: document.querySelector('.films__list'),
@@ -25,12 +28,23 @@ refs.removeFromWatchedBtn.addEventListener('click', onRemoveFromWatchedClick);
 refs.removeFromQueueBtn.addEventListener('click', onRemoveFromQueueClick);
 
 function onWindowLoad() {
+  if (!watchedArr.length) {
+    createPlaceholder();
+    return;
+  }
   refs.removeFromWatchedBtn.innerHTML = 'Remove from watched';
   refs.removeFromQueueBtn.style.display = 'none';
   refs.filmContainer.innerHTML = createMarkUp(watchedArr);
 }
 
 function onWatchedBtnClick() {
+  if (!watchedArr.length && refs.filmContainer.innerHTML === '') {
+    createPlaceholder();
+    return;
+  }
+  if (refs.filmContainer.firstElementChild.classList.contains('empty__container')) {
+    return;
+  }
   refs.removeFromWatchedBtn.style.display = 'block';
   refs.removeFromWatchedBtn.innerHTML = 'Remove from watched';
   refs.removeFromQueueBtn.style.display = 'none';
@@ -38,13 +52,26 @@ function onWatchedBtnClick() {
 }
 
 function onQueueBtnClick() {
+  if (!queueArr.length && refs.filmContainer.innerHTML === '') {
+    createPlaceholder();
+    return;
+  }
+
   refs.removeFromQueueBtn.style.display = 'block';
   refs.removeFromQueueBtn.innerHTML = 'Remove from queue';
   refs.removeFromWatchedBtn.style.display = 'none';
   refs.filmContainer.innerHTML = createMarkUp(queueArr);
+  if (!queueArr.length && refs.filmContainer.innerHTML === '') {
+    createPlaceholder();
+    return;
+  }
 }
 
 function onRemoveFromWatchedClick(e) {
+  if (!watchedArr.length) {
+    createPlaceholder();
+    return;
+  }
   const id = e.target.closest('#film-modal').dataset.id;
   const movieToDelete = watchedArr.find(movie => movie.id === id);
   watchedArr.splice(watchedArr.indexOf(movieToDelete), 1);
@@ -52,9 +79,15 @@ function onRemoveFromWatchedClick(e) {
   refs.filmContainer.innerHTML = createMarkUp(watchedArr);
   closeModal();
   Notify.success('This movie was successfully removed from your watched list');
+  if (!watchedArr.length) {
+    createPlaceholder();
+  }
 }
 
 function onRemoveFromQueueClick(e) {
+  if (!queueArr.length) {
+    createPlaceholder();
+  }
   const id = e.target.closest('#film-modal').dataset.id;
   const movieToDelete = queueArr.find(movie => movie.id === id);
   queueArr.splice(queueArr.indexOf(movieToDelete), 1);
@@ -62,6 +95,10 @@ function onRemoveFromQueueClick(e) {
   refs.filmContainer.innerHTML = createMarkUp(queueArr);
   closeModal();
   Notify.success('This movie was successfully removed from your queue list');
+  if (!queueArr.length) {
+    createPlaceholder();
+  }
+
 }
 
 function createMarkUp(filmsArray) {
@@ -102,3 +139,15 @@ function createMarkUp(filmsArray) {
     .join('');
 }
 
+function createPlaceholder() {
+  const placeholder = document.createElement('li');
+  placeholder.classList.add('empty__container');
+
+  const img = document.createElement('img');
+  img.src = placeholderImagePath;
+  img.alt = 'Empty library';
+  img.classList.add('empty__image');
+  placeholder.append(img);
+  refs.filmContainer.append(placeholder);
+  isCreated = true;
+}
