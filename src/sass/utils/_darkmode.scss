@@ -116,14 +116,25 @@
 
 .darkmode .icon-close {
   stroke: $darkmode-color-two;
+  &:hover {
+    stroke: $darkmode-color-one;
+  }
 }
 
 .darkmode .trailer__icon {
   fill: $darkmode-color-one;
+  transition: 250ms;
+}
+.darkmode .trailer__btn:hover .trailer__icon {
+  fill: $darkmode-color-two;
+  stroke: $darkmode-color-two;
 }
 
 .darkmode .trailer__btn {
   color: $darkmode-color-one;
+  &:hover {
+    color: $darkmode-color-two;
+  }
 }
 
 // -----------------scroll up----------------
@@ -221,16 +232,16 @@
 .darkmode .header__btn-login {
   color: $register-form-text-color;
   border-color: $register-form-text-color;
-  background-color: rgb(3, 185, 167, 0.5);
+  background-color: #4cbcb1cc;
 }
 
 .darkmode .header__btn-login:hover,
 .darkmode .header__btn-login:focus {
-  background: rgb(3, 185, 167, 0.5);
+  background: #43b9ae;
 }
 
 .darkmode .register-form__sign-in {
-  background-color: $darkmode-color-one;
+  background-color: #4cbcb1;
 }
 
 .darkmode .register-form__tite,
@@ -247,15 +258,16 @@
 }
 
 .darkmode .overlay-right {
-  background-color: $darkmode-color-two;
+  background-color: #321259;
+  // backdrop-filter: blur(1px);
 }
 
 .darkmode .overlay-left {
-  background-color: $darkmode-color-two;
+  background-color: #321259;
 }
 
 .darkmode .register-form__sign-up {
-  background-color: $darkmode-color-one;
+  background-color: #4cbcb1;
 }
 
 .darkmode .register-form__text {
@@ -263,12 +275,12 @@
 }
 
 .darkmode .register-form__btn {
-  background-color: $darkmode-color-two;
+  background-color: #46256f;
   color: $register-form-text-color;
 }
 
 .darkmode .ghost {
-  background-color: $darkmode-color-one;
+  background-color: #4cbcb1;
 }
 
 .darkmode .register-form__sign-in ::placeholder {

@@ -36,3 +36,7 @@
 .tui-pagination .tui-first-child.tui-is-selected {
   border: 2px solid #ff6b02;
 }
+
+.darkmode .tui-pagination .tui-is-selected {
+  border: 2px solid $darkmode-color-two;
+}

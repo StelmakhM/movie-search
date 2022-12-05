@@ -132,6 +132,11 @@
     overflow: hidden;
     border: 0;
   }
+
+  &:hover {
+    color: $button-color;
+    transform: scale(0.97);
+  }
 }
 
 .nav__list {
@@ -160,6 +165,13 @@
   &:hover {
     color: $button-color;
   }
+}
+.nav__item {
+  transition: 50ms;
+}
+
+.hover__scale:hover {
+  transform: scale(0.97);
 }
 
 .nav__link.current::after {
@@ -235,7 +247,7 @@
 }
 
 ::placeholder {
-  @include text-design(400, 14px, calc(16 / 14), 0.03em);
+  @include text-design(400, 12px, calc(16 / 14), 0.03em);
   color: $header-text-color;
 }
 
