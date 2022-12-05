@@ -99,14 +99,18 @@
   }
 }
 
+.nav__logo:hover .nav__logo-title {
+  color: $button-color;
+}
+
+.nav__logo:hover .nav__logo-icon {
+  stroke: $button-color;
+}
+
 .nav__logo-icon {
   stroke: $header-text-color;
 
   transition: $main-animation;
-
-  &:hover {
-    stroke: $button-color;
-  }
 }
 
 .nav__logo-title {
@@ -114,6 +118,8 @@
   color: $header-text-color;
 
   transition: $main-animation;
+
+  order: 2;
 
   @media screen and (max-width: 767px) {
     position: absolute;
@@ -126,20 +132,22 @@
     overflow: hidden;
     border: 0;
   }
-
-  &:hover {
-    color: $button-color;
-  }
 }
 
 .nav__list {
   display: flex;
   align-items: center;
-  gap: 39px;
+  gap: 20px;
   margin-left: auto;
+
+  @media screen and (min-width: 768px) {
+    gap: 39px;
+  }
 }
 
 .nav__link {
+  position: relative;
+
   @include text-design(400, 12px, calc(14 / 12), 0.03em);
   color: $header-text-color;
 
@@ -156,11 +164,14 @@
 
 .nav__link.current::after {
   content: '';
-  bottom: 0;
+
+  position: absolute;
+  display: block;
+  bottom: -5;
   left: 0;
 
-  display: block;
   height: 3px;
+  width: 100%;
 
   background-color: $header-underline-color;
 }
@@ -169,8 +180,11 @@
 
 .header__form {
   position: relative;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
+
+  max-width: 394px;
 }
 
 .header__input {
@@ -185,7 +199,6 @@
   padding: 10px;
   transition: $main-animation;
   text-align: center;
-  position: relative;
   @media screen and (min-width: 768px) {
     width: 336px;
   }
@@ -226,16 +239,31 @@
   color: $header-text-color;
 }
 
-.header__search-icon {
+.header__button-search {
   position: absolute;
-  transform: translate(-100%, -70%);
+  right: 15;
+  bottom: 10;
+
+  @media screen and (min-width: 768px) and (max-width: 1279px) {
+    right: 45;
+  }
+
+  background-color: transparent;
+}
+
+.darkmode .header__form:hover .header__button-search .header__search-icon {
+  stroke: #03b9a7;
+}
+
+.header__form:hover .header__button-search .header__search-icon {
+  stroke: $button-color;
+  transform: scale(1.5);
+}
+
+.header__search-icon {
   stroke: $header-text-color;
   fill: none;
-  animation: $main-animation;
-  cursor: pointer;
-  &:hover {
-    stroke: $button-color;
-  }
+  transition: $main-animation;
 }
 
 .header__form-message {
