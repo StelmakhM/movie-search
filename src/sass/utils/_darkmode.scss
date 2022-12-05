@@ -6,22 +6,20 @@
 
 // -----------------darkmode header-----------------
 
+.darkmode .nav__logo:hover .nav__logo-title {
+  color: $darkmode-color-one;
+}
+
+.darkmode .nav__logo:hover .nav__logo-icon {
+  stroke: $darkmode-color-one;
+}
+
 .darkmode .nav__logo-icon {
   stroke: $header-color;
-
-  &:hover {
-    stroke: $darkmode-color-one;
-  }
 }
 
 .darkmode .nav__logo-title {
   color: $header-color;
-}
-
-.darkmode .nav__logo-title {
-  &:hover {
-    color: $darkmode-color-one;
-  }
 }
 
 .darkmode .nav__link {
@@ -31,8 +29,9 @@
     color: $darkmode-color-one;
   }
 }
+
 .darkmode .nav__link.current::after {
-  background-color: $darkmode-color-one;
+  background-color: $darkmode-color-three;
 }
 
 .darkmode ::placeholder {
@@ -220,6 +219,12 @@
 
 // -----------------register form-----------------
 
+.darkmode .register-form__close-btn {
+  &:hover {
+    background-color: #1b6db9;
+  }
+}
+
 .darkmode #loginUser {
   color: $header-color;
 }
@@ -247,6 +252,9 @@
 
 .darkmode .register-form__btn {
   border: transparent;
+  &:hover {
+    transform: scale(1.2);
+  }
 }
 
 .darkmode .overlay-right {
