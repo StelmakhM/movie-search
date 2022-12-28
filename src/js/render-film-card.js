@@ -13,25 +13,35 @@ const refs = {
 };
 
 export function renderFilmCard(e) {
-    const dataset = e.target.closest('li').dataset;
-    const filmObject = {
-        ...dataset
-    };
-    const { genres, originalTitle, overview, posterPath, title, voteAverage, voteCount, populatiry} = filmObject;
-    const arrOfGenres = genres.split(',');
-    const fixedGenres = arrOfGenres.length > 3 ? arrOfGenres[0] + ', ' + arrOfGenres[1] + ' and others' : arrOfGenres.join(', ') || 'No genre';
-    refs.cardTitle.innerHTML = title;
-    refs.cardAvarageVotes.innerHTML = Number.parseFloat(voteAverage).toFixed(1);
-    refs.cardTotalVotes.innerHTML = voteCount;
-    refs.cardPopularity.innerHTML = Number.parseFloat(populatiry).toFixed(1);
-    refs.cardOriginalTitle.innerHTML = (originalTitle.length < 17) ? originalTitle : originalTitle.slice(0, 17) + '...';
-    refs.cardGenres.innerHTML = fixedGenres;
-    refs.cardOverview.innerHTML = overview;
-    refs.cardImage.src = posterPath;
+  const dataset = e.target.closest('li').dataset;
+  const filmObject = {
+    ...dataset,
+  };
+  const {
+    genres,
+    originalTitle,
+    overview,
+    posterPath,
+    title,
+    voteAverage,
+    voteCount,
+    populatiry,
+  } = filmObject;
+  const arrOfGenres = genres.split(',');
+  const fixedGenres =
+    arrOfGenres.length > 3
+      ? arrOfGenres[0] + ', ' + arrOfGenres[1] + ' and others'
+      : arrOfGenres.join(', ') || 'No genre';
+  refs.cardTitle.innerHTML = title;
+  refs.cardAvarageVotes.innerHTML = Number.parseFloat(voteAverage).toFixed(1);
+  refs.cardTotalVotes.innerHTML = voteCount;
+  refs.cardPopularity.innerHTML = Number.parseFloat(populatiry).toFixed(1);
+  refs.cardOriginalTitle.innerHTML = originalTitle;
+  refs.cardGenres.innerHTML = fixedGenres;
+  refs.cardOverview.innerHTML = overview;
+  refs.cardImage.src = posterPath;
 
-
-    
-    for(let key in filmObject) {
-        refs.cardModal.dataset[key] = filmObject[key];
-    }
+  for (let key in filmObject) {
+    refs.cardModal.dataset[key] = filmObject[key];
+  }
 }

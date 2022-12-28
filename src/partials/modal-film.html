@@ -11,29 +11,34 @@
       </div>
       <div class="card__text-container">
         <h2 data-card-title class="card__film-title">${film name}</h2>
-        <div class="card__info-wrapper">
-          <div class="card__info-wrapper-left">
-            <p class="card__subdivision card__votes">Vote / Votes</p>
-            <p class="card__subdivision">Popularity</p>
-            <p class="card__subdivision">Original Title</p>
-            <p class="card__subdivision">Genre</p>
-          </div>
-
-          <div class="card__info-wrapper-right">
-            <p class="card__votes">
-              <span data-card-avarage-votes class="card__vote-title">${2}</span>
-              /
+        <ul class="card__info-wrapper">
+          <li class="card__divider">
+            <span class="card__subdivision">Vote / Votes</span>
+            <div class="test">
+              <span data-card-avarage-votes class="card__vote-title">7.3 </span
+              >/
               <span
-                data-card-total-votes
                 class="card__info-text card__vote-number"
-                >${123}</span
+                data-card-total-votes
+                >1260</span
               >
-            </p>
-            <p data-card-popularity class="card__info-text">${100}</p>
-            <p data-card-original-title class="card__info-text">${original}</p>
-            <p data-card-genre class="card__genre">${genre}</p>
-          </div>
-        </div>
+            </div>
+          </li>
+          <li class="card__divider">
+            <span class="card__subdivision">Popularity</span
+            ><span class="card__info-text" data-card-popularity>100.2</span>
+          </li>
+          <li class="card__divider">
+            <span class="card__subdivision">Original Title</span
+            ><span class="card__info-text" data-card-original-title
+              >A FISTFUL OF LEAD</span
+            >
+          </li>
+          <li class="card__divider">
+            <span class="card__subdivision">Genre</span
+            ><span class="card__genre" data-card-genre>Western </span>
+          </li>
+        </ul>
         <p class="card__about">About</p>
         <p data-card-overview class="card__description">
           Four of the West’s most infamous outlaws assemble to steal a huge
