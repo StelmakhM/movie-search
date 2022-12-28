@@ -27,7 +27,6 @@ const target = document.getElementById('foo');
 const backdrop = document.querySelector('.spinner-backdrop');
 const spinner = new Spinner(opts);
 
-
 function playSpinner() {
   backdrop.classList.remove('is-closed');
   spinner.spin(target);
@@ -40,5 +39,8 @@ function stopSpinner() {
 
 export { playSpinner, stopSpinner };
 
+playSpinner();
 
-
+window.addEventListener('load', () => {
+  stopSpinner();
+});
