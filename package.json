@@ -1,8 +1,8 @@
 {
-  "name": "parcel-project-template",
+  "name": "movie-search-app",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://stelmakhm.github.io/team-project/",
+  "homepage": "https://stelmakhm.github.io/movie-search/",
   "scripts": {
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /team-project/"
