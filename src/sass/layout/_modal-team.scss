@@ -121,13 +121,8 @@
 }
 
 .team__link {
-  transition-property: transform;
-  transition-duration: 500ms;
   margin-right: 5px;
-
-  &:hover {
-    transform: scale(1.3);
-  }
+  margin-top: 5px;
 }
 
 .team__name {
